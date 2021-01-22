@@ -1,18 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 
-import WeeklyActiveDevCount from "./WeeklyActiveDevCount";
-import MonthlyActiveDevCount from "./MonthlyActiveDevCount";
-import ActiveAccounts from "./ActiveAccounts";
-import ActiveValidators from "./ActiveValidators"
+import App from "./app";
+import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <WeeklyActiveDevCount />
-    <MonthlyActiveDevCount />
-    <ActiveAccounts />
-    <ActiveValidators />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

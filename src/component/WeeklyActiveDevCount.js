@@ -1,13 +1,16 @@
-import React, {useState, useEffect} from "react"
+import React, {useState, useEffect} from "react";
+
+import Tooltip from "../utils/Tooltip";
+import {term} from "../utils/term";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [monthlyActiveDeveloperCount, setCount] = useState([]);
+  const [weeklyActiveDeveloperCount, setCount] = useState([]);
 
   useEffect(() => {
-    fetch("https://mixpanel.com/api/2.0/insights?bookmark_id=11445773", {
+    fetch("https://mixpanel.com/api/2.0/insights?bookmark_id=11445540", {
       "method": "GET",
       "headers": {
         "Accept": "application/json",
@@ -17,7 +20,7 @@ export default () => {
     .then(res => res.json())
     .then(
       (result) => {
-        let res = result.series["Monthly Active User"]
+        let res = result.series["Weekly Active User"]
         setIsLoaded(true);
         setCount(Object.values(res)[0]);
       },
@@ -41,8 +44,8 @@ export default () => {
   } else {
     return (
       <div>
-        <h3>Monthly Active Developer</h3>
-        <h3>{monthlyActiveDeveloperCount}</h3>
+        <h4>Weekly Active Developer <Tooltip text={term.weekly_active_developer} /></h4>
+        <h4><strong className="green">{weeklyActiveDeveloperCount}</strong></h4>
       </div>
     );
   }
