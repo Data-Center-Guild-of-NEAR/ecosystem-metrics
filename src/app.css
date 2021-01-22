@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
 .container {
   width: 90%;
+  max-width: 1200px;
   margin: auto;
   margin-top: 50px;
   text-align: center;
+  font-family: 'Inter', sans-serif;
 }
 
 .active-developer {
