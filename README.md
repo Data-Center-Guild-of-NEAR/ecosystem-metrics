@@ -2,7 +2,7 @@
 This project is dashboard for ecosystem metrics which including users, decentralization and usage part. welcome to have a look and leave comments in the issue or make contributions from PR.
 
 ### Notice 
-All term explanation is in src/utils/term.js file.
+All term explanations are in src/utils/term.js file.
 
 ###### Getting Started with Create React App
 
