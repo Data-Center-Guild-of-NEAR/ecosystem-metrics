@@ -44,7 +44,7 @@ export default () => {
   } else {
     return (
       <div>
-        <h3>Monthly Active Developer <Tooltip text={term.current_validators} /></h3>
+        <h3>Monthly Active Developer <Tooltip text={term.monthly_active_developer} /></h3>
         <h3><strong className="green">{monthlyActiveDeveloperCount}</strong></h3>
       </div>
     );
