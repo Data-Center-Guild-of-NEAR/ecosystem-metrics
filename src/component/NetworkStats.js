@@ -30,6 +30,7 @@ export default () => {
   return <div>
           <div>Network GDP <Tooltip text={term.network_gdp} /> : <strong className="green">{gdp} Ⓝ</strong></div>
           <div>Inflation rate <Tooltip text={term.inflation_rate} /> : <strong className="green">{Number(gdp*100/INITIAL_SUPPLY_CONVERT_TO_NEAR).toFixed(4)} %</strong></div>
+          <div>Total staking rewards<Tooltip text={term.total_staking_rewards} /> : <strong className="green">{gdp + gasFee} Ⓝ</strong> </div>
           <div>Inception to date of Gas Fee <Tooltip text={term.gas_fee} /> : <strong className="green">{gasFee} Ⓝ </strong></div>
         </div>
 }
