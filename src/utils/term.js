@@ -1,6 +1,6 @@
 export const term = {
-  monthly_active_developer: "The count for monthly active developer.",
-  weekly_active_developer: "The count for weekly active developer.",
+  monthly_active_developer: "The count for CLI non-validator users with at least 1 activity in a month.",
+  weekly_active_developer: "The count for CLI non-validator users with at least 1 activity in a week.",
   current_active_accounts: "The count for active accounts in 24 hours. Active account is defined as account that have executive receipts ",
   weekly_active_accounts: "The count for active accounts aggregated by weekly.",
   current_validators: "The number of validating node in current epoch.",
