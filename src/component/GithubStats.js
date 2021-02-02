@@ -73,8 +73,8 @@ export default () => {
   } else {
     return (
       <div>
-        <div>Monthly Github Developer <Tooltip text={term.monthly_github_developer} />: <strong className="green">{monthlyDeveloper}</strong></div>
-        <div>Weekly Github Developer <Tooltip text={term.weekly_github_developer} />: <strong className="green">{weeklyDeveloper}</strong></div>
+        <div>Monthly Active Developer(External)<Tooltip text={term.monthly_github_developer} />: <strong className="green">{monthlyDeveloper}</strong></div>
+        <div>Weekly Active Developer(External)<Tooltip text={term.weekly_github_developer} />: <strong className="green">{weeklyDeveloper}</strong></div>
       </div>
     );
   }
