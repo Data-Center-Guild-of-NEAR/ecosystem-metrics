@@ -6,6 +6,7 @@ import MonthlyActiveDevCount from "./component/MonthlyActiveDevCount";
 import ActiveAccounts from "./component/ActiveAccounts";
 import ActiveValidators from "./component/ActiveValidators";
 import NetworkStats from "./component/NetworkStats";
+import GithubStats from "./component/GithubStats";
 
 import "./app.css"
 
@@ -19,6 +20,7 @@ export default () => {
         <ActiveAccounts />
         <ActiveValidators />
         <NetworkStats />
+        <GithubStats />
     </div>
   </div>
 }

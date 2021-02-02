@@ -7,7 +7,7 @@ import {term} from "../utils/term";
 export default () => {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [monthlyActiveDeveloperCount, setCount] = useState([]);
+  const [monthlyActiveDeveloperCount, setCount] = useState(null);
 
   useEffect(() => {
     fetch("https://mixpanel.com/api/2.0/insights?bookmark_id=11445773", {
