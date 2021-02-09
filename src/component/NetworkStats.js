@@ -36,9 +36,9 @@ export default () => {
   useEffect(() => Subscription(), [Subscription]);
 
   return <div>
-          <div>Network GDP <Tooltip text={term.network_gdp} /> : <strong className="green">{formatWithCommas(gdp)} Ⓝ</strong></div>
           <div>Total staking rewards<Tooltip text={term.total_staking_rewards} /> : <strong className="green">{formatWithCommas(stakeReward)} Ⓝ</strong> </div>
           <div>Inception to date of Gas Fee <Tooltip text={term.gas_fee} /> : <strong className="green">{formatWithCommas(gasFee)} Ⓝ </strong></div>
-          <div>Total amount from transactions <Tooltip text={term.total_deposit} /> : <strong className="green">{formatWithCommas(depositAmount)} Ⓝ </strong></div>
+          <div>Total volume transacted <Tooltip text={term.total_deposit} /> : <strong className="green">{formatWithCommas(depositAmount)} Ⓝ </strong></div>
+          <div>Total Inflation <Tooltip text={term.network_gdp} /> : <strong className="green">{formatWithCommas(gdp)} Ⓝ</strong></div>
         </div>
 }
