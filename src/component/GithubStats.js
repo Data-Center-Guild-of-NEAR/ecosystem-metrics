@@ -20,10 +20,18 @@ export default () => {
   useEffect(() => {
 
     let today = new Date(); 
-
+    // today
     let dd = today.getUTCDate(); 
     let mm = today.getUTCMonth()+1; 
     let yyyy = today.getUTCFullYear();
+
+    //week ago
+    let before7Daysdate = new Date(today.setDate(dd - 7))
+    let dd7ago = before7Daysdate.getUTCDate(); 
+    let mm7ago = before7Daysdate.getUTCMonth()+1; 
+    let yyyy7ago = before7Daysdate.getUTCFullYear();
+    let month = mm7ago < 10 ? '-0' : '-'
+    let date7ago = yyyy7ago + month + mm7ago + '-' + dd7ago;
 
     let developer_list = "developer_list_by_"+ mm + "_" + dd + "_" + yyyy
 
@@ -35,7 +43,7 @@ export default () => {
         "Authorization": "Bearer 632a32ecca7db94e4a46fc11f0418a88"
       },
       body:  JSON.stringify({
-        query: `SELECT date, developer_set FROM ${developer_list}`,
+        query: `SELECT date, developer_set FROM ${developer_list} order by date`,
       })
     })
     .then(res => res.json())
@@ -43,8 +51,9 @@ export default () => {
       (result) => {
         let res = result.resultSet.Rows
         res = res.map(data => ({date: data.Data[0].VarCharValue, developerList: data.Data[1].VarCharValue.slice(1,-2).split(", ")}))
-        res = res.slice(1,31)
-        let weekRes = res.slice(-7)
+        res = res.slice(1, res.length)
+        let weekIndex = res.findIndex(r => r.date === date7ago)
+        let weekRes = res.slice(weekIndex, res.length)
         let monthlyDeveloper = getUnique(res)
         let weeklyDeveloper = getUnique(weekRes)
         setMonthlyCount(monthlyDeveloper.length)
@@ -73,8 +82,8 @@ export default () => {
   } else {
     return (
       <div>
-        <div>Monthly Active Developer(External)<Tooltip text={term.monthly_github_developer} />: <strong className="green">{monthlyDeveloper}</strong></div>
-        <div>Weekly Active Developer(External)<Tooltip text={term.weekly_github_developer} />: <strong className="green">{weeklyDeveloper}</strong></div>
+        <div>Monthly Active Developer(External) <Tooltip text={term.monthly_github_developer} />: <strong className="green">{monthlyDeveloper}</strong></div>
+        <div>Weekly Active Developer(External) <Tooltip text={term.weekly_github_developer} />: <strong className="green">{weeklyDeveloper}</strong></div>
       </div>
     );
   }

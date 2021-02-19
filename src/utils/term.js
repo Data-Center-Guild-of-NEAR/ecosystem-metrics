@@ -12,6 +12,7 @@ export const term = {
   total_staking_rewards: "Total amount of staking rewards from rewards starts date.",
   total_deposit: "Total transaction amount from transfer and function call.",
   monthly_github_developer: "Number of developer contribute to NEAR github repo within a month",
-  weekly_github_developer: "Number of developer contribute to NEAR github repo within a week"
+  weekly_github_developer: "Number of developer contribute to NEAR github repo within a week",
+  partner_count: "Number of dapp that work with NEAR"
 }
 

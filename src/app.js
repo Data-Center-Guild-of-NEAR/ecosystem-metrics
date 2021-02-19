@@ -7,6 +7,7 @@ import ActiveAccounts from "./component/ActiveAccounts";
 import ActiveValidators from "./component/ActiveValidators";
 import NetworkStats from "./component/NetworkStats";
 import GithubStats from "./component/GithubStats";
+import Partner from "./component/Partner";
 
 import "./app.css"
 
@@ -15,6 +16,7 @@ export default () => {
     <div className="active-developer">
     <MonthlyActiveDevCount />
     <WeeklyActiveDevCount />
+    <Partner />
     </div>
     <div className="content">
         <ActiveAccounts />
