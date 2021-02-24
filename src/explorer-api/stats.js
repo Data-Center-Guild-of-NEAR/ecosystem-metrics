@@ -5,11 +5,7 @@ export default class StatsApi extends ExplorerApi {
     let accountCount = await this.call("active-accounts-count-aggregated-by-date");
     if(accountCount){
       let currentDayCount = accountCount[accountCount.length -1].accountsCount
-      let weeklyCount = 0;
-      for (let i=accountCount.length-1; i> accountCount.length - 8; i--){
-        weeklyCount += Number(accountCount[i].accountsCount)
-      }
-      return {currentDayCount, weeklyCount}
+      return currentDayCount
     }
     return
   }

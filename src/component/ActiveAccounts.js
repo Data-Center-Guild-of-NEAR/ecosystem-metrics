@@ -7,19 +7,16 @@ import {term} from "../utils/term";
 
 export default () => {
   const [activeCurrentAccounts, setAccounts] = useState(null);
-  const [activeWeeklyAccounts, setWeeklyAccounts] = useState(null)
 
   useEffect(() => {
     new StatsApi().activeAccountsCountAggregatedByDate().then((count) => {
       if (count) {
-        setAccounts(count.currentDayCount);
-        setWeeklyAccounts(count.weeklyCount)
+        setAccounts(count);
       }
     });
   }, []);
 
   return <div>
-          <div>Current Active Accounts <Tooltip text={term.current_active_accounts} /> : <strong className="green">{activeCurrentAccounts}</strong></div>
-          <div>Weekly Active Accounts <Tooltip text={term.weekly_active_accounts} />: <strong className="green">{activeWeeklyAccounts}</strong></div>
+          <div>Daily Active Accounts <Tooltip text={term.current_active_accounts} /> : <strong className="green">{activeCurrentAccounts}</strong></div>
         </div>
 }
