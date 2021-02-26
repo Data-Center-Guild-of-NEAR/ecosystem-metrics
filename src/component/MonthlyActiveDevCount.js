@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { Spinner, Row} from "react-bootstrap";
+import { Spinner, Row, Tabs, Tab } from "react-bootstrap";
 import ReactEcharts from "echarts-for-react";
 
 import Tooltip from "../utils/Tooltip";
@@ -10,7 +10,8 @@ export default () => {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [date, setDate] = useState([]);
-  const [monthlyActiveDeveloperCount, setCount] = useState({});
+  const [monthlyActiveDeveloperCount, setMonth] = useState([]);
+  const [weeklyActiveDeveloperCount, setWeek] = useState([]);
 
   useEffect(() => {
     fetch("https://mixpanel.com/api/2.0/insights?bookmark_id=11445773", {
@@ -27,9 +28,37 @@ export default () => {
         let date = Object.keys(res)
         date = date.map(d => d.slice(0,10))
         setDate(date)
-        setCount(Object.values(res))
+        setMonth(Object.values(res))
         setIsLoaded(true)
       },
+      (error) => {
+        setIsLoaded(true);
+        setError(error);
+      }
+    )
+    .catch(err => {
+      console.error(err);
+    });
+  }, [])
+
+  useEffect(() => {
+    fetch("https://mixpanel.com/api/2.0/insights?bookmark_id=11445540", {
+      "method": "GET",
+      "headers": {
+        "Accept": "application/json",
+        "Authorization": "Basic NzEwMGI4ZGM1MTE4NmFlZGRjZmQ5ZGU3ZGExNzExNjk6"
+      }
+    })
+    .then(res => res.json())
+    .then(
+      (result) => {
+        let res = result.series["Weekly Active User"]
+        setWeek(Object.values(res))
+        setIsLoaded(true);
+      },
+      // Note: it's important to handle errors here
+      // instead of a catch() block so that we don't swallow
+      // exceptions from actual bugs in components.
       (error) => {
         setIsLoaded(true);
         setError(error);
@@ -119,17 +148,31 @@ export default () => {
             </Row>;
   } else {
     return (
-      <Row>
-        <h3>Monthly Active Developer(Internal) <Tooltip text={term.monthly_active_developer} /></h3>
-        <ReactEcharts
-          option={getOption(
-            "",
-            date,
-            monthlyActiveDeveloperCount
-          )}
-          style={chartStyle}
-        />
-      </Row>
+      <div>
+        <h3>Active Developer(Internal) <Tooltip text={term.monthly_active_developer} /></h3>
+        <Tabs defaultActiveKey="monthly" id="activeDeveloper">
+          <Tab eventKey="monthly" title="Monthly">
+            <ReactEcharts
+              option={getOption(
+                "Monthly Active Developer(Internal)",
+                date,
+                monthlyActiveDeveloperCount
+              )}
+              style={chartStyle}
+            />
+          </Tab>
+          <Tab eventKey="weekly" title="Weekly">
+            <ReactEcharts
+              option={getOption(
+                "Weekly Active Developer(Internal)",
+                date,
+                weeklyActiveDeveloperCount
+              )}
+              style={chartStyle}
+            />
+          </Tab>
+        </Tabs>
+      </div>
     );
   }
 }

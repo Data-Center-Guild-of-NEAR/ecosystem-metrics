@@ -3,7 +3,7 @@ import React from "react"
 
 export default ({text}) => {
 return <div className="tooltip">
-        <img src="https://near.org/wp-content/uploads/2019/02/icon-view-source.svg" alt="?" className="icon" /> 
+        <img src="/icon-view-source.svg" alt="?" className="icon" /> 
         <span className="tooltiptext">{text}</span>
         <style>{`
         .icon {

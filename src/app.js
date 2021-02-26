@@ -1,7 +1,8 @@
 /* eslint-disable import/no-anonymous-default-export */
-import React from 'react'
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, Row } from "react-bootstrap";
 
-import WeeklyActiveDevCount from "./component/WeeklyActiveDevCount";
 import MonthlyActiveDevCount from "./component/MonthlyActiveDevCount";
 import ActiveAccounts from "./component/ActiveAccounts";
 import ActiveValidators from "./component/ActiveValidators";
@@ -12,17 +13,15 @@ import Partner from "./component/Partner";
 import "./app.css"
 
 export default () => {
-  return <div className="container">
-    <div className="active-developer">
-    <MonthlyActiveDevCount />
-    <WeeklyActiveDevCount />
+  return <Container>
+    <h1>Ecosystem Metrics</h1>
     <Partner />
-    </div>
-    <div className="content">
-        <ActiveAccounts />
-        <ActiveValidators />
-        <NetworkStats />
-        <GithubStats />
-    </div>
-  </div>
+    <Row>
+      <ActiveValidators />
+      <NetworkStats />
+    </Row>
+    <MonthlyActiveDevCount />
+    <GithubStats />
+    <ActiveAccounts />
+  </Container>
 }

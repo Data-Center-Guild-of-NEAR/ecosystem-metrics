@@ -9,18 +9,6 @@
   font-family: 'Inter', sans-serif;
 }
 
-.active-developer {
-  width: 100%;
-}
-
-.content {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  text-align: left;
-}
-
 .green {
   color: rgb(108, 204, 99)
 }

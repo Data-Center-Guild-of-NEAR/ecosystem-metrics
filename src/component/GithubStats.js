@@ -1,4 +1,6 @@
 import React, {useState, useEffect} from "react";
+import { Spinner, Row } from "react-bootstrap";
+import ReactEcharts from "echarts-for-react";
 
 import Tooltip from "../utils/Tooltip";
 import {term} from "../utils/term";
@@ -9,13 +11,19 @@ export default () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [monthlyDeveloper, setMonthlyCount] = useState(null);
   const [weeklyDeveloper, setWeeklyCount] = useState(null);
+  const [developer, setCount] = useState([]);
+  const [date, setDate] = useState([]);
 
-  const getUnique = (res) => {
+  const getTotalUnique = (res) => {
     let result = res.map(dev => dev.developerList).reduce((dev, current) => current.concat(dev), [])
     return result.filter((dev, index) => {
           return result.indexOf(dev) === index
       }).filter((dev) => !dev.includes("dependabot"))
   }
+
+  const getUnique = (res) => res.filter((dev, index) => {
+                    return res.indexOf(dev) === index
+                }).filter((dev) => !dev.includes("dependabot"))
 
   useEffect(() => {
 
@@ -26,14 +34,14 @@ export default () => {
     let yyyy = today.getUTCFullYear();
 
     //week ago
-    let before7Daysdate = new Date(today.setDate(dd - 7))
+    let before7Daysdate = new Date(today.setDate(dd - 7));
     let dd7ago = before7Daysdate.getUTCDate(); 
     let mm7ago = before7Daysdate.getUTCMonth()+1; 
     let yyyy7ago = before7Daysdate.getUTCFullYear();
-    let month = mm7ago < 10 ? '-0' : '-'
+    let month = mm7ago < 10 ? '-0' : '-';
     let date7ago = yyyy7ago + month + mm7ago + '-' + dd7ago;
 
-    let developer_list = "developer_list_by_"+ mm + "_" + dd + "_" + yyyy
+    let developer_list = "developer_list_by_"+ mm + "_" + dd + "_" + yyyy;
 
     fetch("https://rt.pipedream.com/sql", {
       method: "POST",
@@ -52,10 +60,19 @@ export default () => {
         let res = result.resultSet.Rows
         res = res.map(data => ({date: data.Data[0].VarCharValue, developerList: data.Data[1].VarCharValue.slice(1,-2).split(", ")}))
         res = res.slice(1, res.length)
+        //get total
         let weekIndex = res.findIndex(r => r.date === date7ago)
         let weekRes = res.slice(weekIndex, res.length)
-        let monthlyDeveloper = getUnique(res)
-        let weeklyDeveloper = getUnique(weekRes)
+        let monthlyDeveloper = getTotalUnique(res)
+        let weeklyDeveloper = getTotalUnique(weekRes)
+        //get list
+        res = Object.values(res.reduce((a,c) => {
+          a[c.date] = Object.assign(a[c.date] || {}, c)
+          return a
+        }, {}))
+        let developer = res.map(r => getUnique(r.developerList))
+        setCount(developer.map(d => d.length))
+        setDate(res.map(r => r.date))
         setMonthlyCount(monthlyDeveloper.length)
         setWeeklyCount(weeklyDeveloper.length)
         setIsLoaded(true);
@@ -73,17 +90,96 @@ export default () => {
     });
   }, [])
 
+  const chartStyle = {
+    height: "480px",
+    width: "100%"
+  };
 
+  const getOption = (title, date, data) => {
+    return {
+      title: {
+        text: title,
+      },
+      tooltip: {
+        trigger: "axis",
+      },
+      grid: {
+        left: "3%",
+        right: "4%",
+        bottom: "3%",
+        containLabel: true,
+        show: true,
+        color: "gray",
+        backgroundColor: "rgba(218, 210, 250, 0.1)",
+      },
+      xAxis: [
+        {
+          type: "category",
+          boundaryGap: false,
+          data: date,
+        },
+      ],
+      yAxis: [
+        {
+          type: "value",
+          splitLine: {
+            lineStyle: {
+              color: "white",
+            },
+          },
+        },
+      ],
+      dataZoom: [
+        {
+          type: "inside",
+          start: 0,
+          end: 100,
+          filterMode: "filter",
+        },
+        {
+          start: 0,
+          end: 100,
+        },
+      ],
+      series: [
+        {
+          name: "Daily Developer",
+          type: "line",
+          lineStyle: {
+            color: "#4f44e0",
+            width: 2,
+          },
+          symbol: "circle",
+          itemStyle: {
+            color: "#25272A",
+          },
+          data: data,
+        },
+      ],
+    };
+  };
 
   if (error) {
-    return <div>Error: {error.message}</div>;
-  } else if (!isLoaded) {
-    return <div>Loading...</div>;
+    return <Row>Error: {error.message}</Row>;
+  } else if (!isLoaded || date.length === 0) {
+    return <Row>
+            <Spinner animation="grow" variant="primary" />
+            <Spinner animation="grow" variant="primary" />
+            <Spinner animation="grow" variant="primary" />
+          </Row>;;
   } else {
     return (
       <div>
-        <div>Monthly Active Developer(External) <Tooltip text={term.monthly_github_developer} />: <strong className="green">{monthlyDeveloper}</strong></div>
-        <div>Weekly Active Developer(External) <Tooltip text={term.weekly_github_developer} />: <strong className="green">{weeklyDeveloper}</strong></div>
+        <h3>Monthly Active Developer(External) <Tooltip text={term.monthly_github_developer} />: <strong className="green">{monthlyDeveloper}</strong></h3>
+        <h3>Weekly Active Developer(External) <Tooltip text={term.weekly_github_developer} />: <strong className="green">{weeklyDeveloper}</strong></h3>
+        <ReactEcharts
+              option={getOption(
+                "Daily Active Github Developer(Internal)",
+                date,
+                developer
+              )}
+              style={chartStyle}
+            />
       </div>
     );
   }
