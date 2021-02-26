@@ -2,12 +2,7 @@ import { ExplorerApi } from ".";
 
 export default class StatsApi extends ExplorerApi {
   async activeAccountsCountAggregatedByDate() {
-    let accountCount = await this.call("active-accounts-count-aggregated-by-date");
-    if(accountCount){
-      let currentDayCount = accountCount[accountCount.length -1].accountsCount
-      return currentDayCount
-    }
-    return
+    return await this.call("active-accounts-count-aggregated-by-date");    
   }
 
   async teraGasAggregatedByDate() {

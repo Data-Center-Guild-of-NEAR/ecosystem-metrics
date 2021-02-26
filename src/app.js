@@ -20,8 +20,11 @@ export default () => {
       <ActiveValidators />
       <NetworkStats />
     </Row>
+    <hr />
     <MonthlyActiveDevCount />
+    <hr />
     <GithubStats />
+    <hr />
     <ActiveAccounts />
   </Container>
 }

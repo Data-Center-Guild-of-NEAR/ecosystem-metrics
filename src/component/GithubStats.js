@@ -167,8 +167,8 @@ export default () => {
             <Spinner animation="grow" variant="primary" />
             <Spinner animation="grow" variant="primary" />
           </Row>;;
-  } else {
-    return (
+  }
+  return (
       <div>
         <h3>Monthly Active Developer(External) <Tooltip text={term.monthly_github_developer} />: <strong className="green">{monthlyDeveloper}</strong></h3>
         <h3>Weekly Active Developer(External) <Tooltip text={term.weekly_github_developer} />: <strong className="green">{weeklyDeveloper}</strong></h3>
@@ -181,6 +181,5 @@ export default () => {
               style={chartStyle}
             />
       </div>
-    );
-  }
+  );
 }

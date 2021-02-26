@@ -146,8 +146,8 @@ export default () => {
             <Spinner animation="grow" variant="primary" />
             <Spinner animation="grow" variant="primary" />
             </Row>;
-  } else {
-    return (
+  }
+  return (
       <div>
         <h3>Active Developer(Internal) <Tooltip text={term.monthly_active_developer} /></h3>
         <Tabs defaultActiveKey="monthly" id="activeDeveloper">
@@ -174,5 +174,4 @@ export default () => {
         </Tabs>
       </div>
     );
-  }
 }
