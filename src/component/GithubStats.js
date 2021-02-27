@@ -42,7 +42,7 @@ export default () => {
     let date7ago = yyyy7ago + month + mm7ago + '-' + dd7ago;
 
     let developer_list = "developer_list_by_"+ mm + "_" + dd + "_" + yyyy;
-
+    console.log(developer_list)
     fetch("https://rt.pipedream.com/sql", {
       method: "POST",
       headers: {
@@ -92,7 +92,7 @@ export default () => {
 
   const chartStyle = {
     height: "480px",
-    width: "100%"
+    width: "90%"
   };
 
   const getOption = (title, date, data) => {

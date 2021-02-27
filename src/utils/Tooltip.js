@@ -1,44 +1,27 @@
 /* eslint-disable import/no-anonymous-default-export */
-import React from "react"
+import React, { useState, useRef } from "react"
+import { Overlay, Tooltip, Button } from "react-bootstrap";
 
 export default ({text}) => {
-return <div className="tooltip">
-        <img src="/icon-view-source.svg" alt="?" className="icon" /> 
-        <span className="tooltiptext">{text}</span>
-        <style>{`
-        .icon {
-          height: 14px;
-        }
+  const [show, setShow] = useState(false);
+  const target = useRef(null);
 
-        /* Tooltip container */
-        .tooltip {
-          position: relative;
-          display: inline-block;
-          border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
-        }
-        
-        /* Tooltip text */
-        .tooltip .tooltiptext {
-          visibility: hidden;
-          width: 180px;
-          background-color: #757474;
-          color: #f2f0f0;
-          text-align: center;
-          padding: 15px;
-          border-radius: 6px;
-         
-          /* Position the tooltip text - see examples below! */
-          position: absolute;
-          top: 100%;
-          left: 50%;
-          margin-left: -90px; 
-          z-index: 1;
-        }
-        
-        /* Show the tooltip text when you mouse over the tooltip container */
-        .tooltip:hover .tooltiptext {
-          visibility: visible;
-        }
-        `}</style>
-      </div> 
+  return <>
+          <Button ref={target} onClick={() => setShow(!show)}>
+            <img src="/icon-view-source.svg" alt="?" className="icon"/> 
+          </Button>
+          <Overlay target={target.current} show={show} placement="right">
+            <Tooltip id="overlay-example" >
+              {text}
+            </Tooltip>
+        </Overlay>  
+          <style>{`
+          .btn-primary {
+            padding: 0;
+          }
+          .icon {
+            height: 14px;
+          }
+          `}</style>
+        </> 
 }

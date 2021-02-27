@@ -20,7 +20,8 @@ export default () => {
 
   useEffect(() => Subscription(), [Subscription]);
 
-  return <div>
+  return <div style={{textAlign: "left"}}>
+          <h4>Stake Situation</h4>
           <div>Current Validators <Tooltip text={term.current_validators} /> : <strong className="green">{validators}</strong></div>
           <div>Current Proposals <Tooltip text={term.current_proposals} /> : <strong className="green">{proposals}</strong></div>
           <div>Next Validators <Tooltip text={term.next_validators} /> : <strong className="green">{nextValidators}</strong></div>

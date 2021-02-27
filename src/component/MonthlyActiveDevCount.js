@@ -71,7 +71,7 @@ export default () => {
 
   const chartStyle = {
     height: "480px",
-    width: "100%"
+    width: "90%"
   };
 
   const getOption = (title, date, data) => {
