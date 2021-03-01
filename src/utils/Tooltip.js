@@ -7,7 +7,7 @@ export default ({text}) => {
   const target = useRef(null);
 
   return <>
-          <Button ref={target} onClick={() => setShow(!show)}>
+          <Button ref={target} onClick={() => setShow(!show)} style={{background:"transparent", border: "none"}}>
             <img src="/icon-view-source.svg" alt="?" className="icon"/> 
           </Button>
           <Overlay target={target.current} show={show} placement="right">
@@ -21,6 +21,7 @@ export default ({text}) => {
           }
           .icon {
             height: 14px;
+            margin-top: -3px;
           }
           `}</style>
         </> 

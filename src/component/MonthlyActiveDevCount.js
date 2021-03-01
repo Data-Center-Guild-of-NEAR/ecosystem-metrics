@@ -122,7 +122,7 @@ export default () => {
       ],
       series: [
         {
-          name: "monthly Developer",
+          name: "Avtive Developer",
           type: "line",
           lineStyle: {
             color: "#4f44e0",
@@ -149,12 +149,13 @@ export default () => {
   }
   return (
       <div>
-        <h3>Active Developer(Internal) <Tooltip text={term.monthly_active_developer} /></h3>
+        <h3>Monthly Active Developer(Internal) <Tooltip text={term.monthly_active_developer} />: <strong className="green">{monthlyActiveDeveloperCount[monthlyActiveDeveloperCount.length-1]}</strong></h3>
+        <h3>Weekly Active Developer(Internal) <Tooltip text={term.weekly_active_developer} />: <strong className="green">{weeklyActiveDeveloperCount[weeklyActiveDeveloperCount.length-1]}</strong></h3>
         <Tabs defaultActiveKey="monthly" id="activeDeveloper">
           <Tab eventKey="monthly" title="Monthly">
             <ReactEcharts
               option={getOption(
-                "Monthly Active Developer(Internal)",
+                "Active Developer(Internal)",
                 date,
                 monthlyActiveDeveloperCount
               )}
@@ -164,7 +165,7 @@ export default () => {
           <Tab eventKey="weekly" title="Weekly">
             <ReactEcharts
               option={getOption(
-                "Weekly Active Developer(Internal)",
+                "Active Developer(Internal)",
                 date,
                 weeklyActiveDeveloperCount
               )}
