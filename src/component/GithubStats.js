@@ -174,7 +174,7 @@ export default () => {
         <h3>Weekly Active Developer(External) <Tooltip text={term.weekly_github_developer} />: <strong className="green">{weeklyDeveloper}</strong></h3>
         <ReactEcharts
               option={getOption(
-                "Active Developer(EXternal)",
+                "Active Developer(External)",
                 date,
                 developer
               )}
