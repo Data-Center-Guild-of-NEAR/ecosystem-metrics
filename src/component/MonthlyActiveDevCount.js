@@ -3,7 +3,7 @@ import { Spinner, Row, Tabs, Tab } from "react-bootstrap";
 import ReactEcharts from "echarts-for-react";
 
 import Tooltip from "../utils/Tooltip";
-import {term} from "../utils/term";
+import { term } from "../utils/term";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
@@ -147,10 +147,18 @@ export default () => {
             <Spinner animation="grow" variant="primary" />
             </Row>;
   }
+  const currentMonthly = monthlyActiveDeveloperCount[monthlyActiveDeveloperCount.length-1]
+  const prevMonthly = monthlyActiveDeveloperCount[monthlyActiveDeveloperCount.length-8]
+  const currentWeekly = weeklyActiveDeveloperCount[weeklyActiveDeveloperCount.length-1]
+  const prevWeekly = weeklyActiveDeveloperCount[weeklyActiveDeveloperCount.length-8]
   return (
       <div>
-        <h3>Monthly Active Developer(Internal) <Tooltip text={term.monthly_active_developer} />: <strong className="green">{monthlyActiveDeveloperCount[monthlyActiveDeveloperCount.length-1]}</strong></h3>
-        <h3>Weekly Active Developer(Internal) <Tooltip text={term.weekly_active_developer} />: <strong className="green">{weeklyActiveDeveloperCount[weeklyActiveDeveloperCount.length-1]}</strong></h3>
+        <h3>Monthly Active Developer(Internal) <Tooltip text={term.monthly_active_developer} />: <strong className="green">{currentMonthly}</strong>
+            {prevMonthly && <Diff current={currentMonthly} prev={prevMonthly} />}
+        </h3>
+        <h3>Weekly Active Developer(Internal) <Tooltip text={term.weekly_active_developer} />: <strong className="green">{currentWeekly}</strong>
+            {prevWeekly && <Diff current={currentWeekly} prev={prevWeekly} />}
+        </h3>
         <Tabs defaultActiveKey="monthly" id="activeDeveloper">
           <Tab eventKey="monthly" title="Monthly">
             <ReactEcharts
@@ -175,4 +183,23 @@ export default () => {
         </Tabs>
       </div>
     );
+}
+
+export const Diff = ({current, prev}) => {
+  let diff = ( (current - prev) / prev * 100 ).toFixed(4)
+  let signal = current > prev ? '+' : ''
+  return (
+    <span 
+      style={{
+        background: current > prev ? "#C2FCE0" : "#ffd4cf",
+        borderRadius: "4px",
+        color: current > prev ? "#008D6A" : "#e87c79",
+        marginLeft: "5px",
+        paddingLeft: "3px",
+        fontSize: "16px"
+      }}
+    >
+      {signal}{diff}%
+    </span>
+  )
 }

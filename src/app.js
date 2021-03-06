@@ -18,7 +18,7 @@ export default () => {
       <Partner />
       <Container>
         <Row>
-          <Col>
+          <Col md="4">
             <ActiveValidators />
           </Col>
           <Col>

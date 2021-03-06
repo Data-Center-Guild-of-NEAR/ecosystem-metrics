@@ -5,7 +5,8 @@ import ReactEcharts from "echarts-for-react";
 
 import StatsApi from "../explorer-api/stats";
 import Tooltip from "../utils/Tooltip";
-import {term} from "../utils/term";
+import { term } from "../utils/term";
+import { Diff } from "./MonthlyActiveDevCount";
 
 export default () => {
   const [error, setError] = useState(null);
@@ -110,9 +111,13 @@ export default () => {
             <Spinner animation="grow" variant="primary" />
           </Row>;;
   } 
+  const currentAccounts = Number(activetAccounts[activetAccounts.length-1])
+  const prevAccounts = Number(activetAccounts[activetAccounts.length-2])
   return (
     <div>
-      <h3>Daily Active Accounts <Tooltip text={term.current_active_accounts} /> : <strong className="green">{activetAccounts[activetAccounts.length-1]}</strong></h3>
+      <h3>Daily Active Accounts <Tooltip text={term.current_active_accounts} /> : <strong className="green">{currentAccounts}</strong>
+          {prevAccounts && <Diff current={currentAccounts} prev={prevAccounts} />}
+      </h3>
       <ReactEcharts
               option={getOption(
                 "Daily Amount of Active Accounts",

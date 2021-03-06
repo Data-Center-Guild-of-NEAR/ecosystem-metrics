@@ -54,18 +54,19 @@ export default () => {
 }
 
 const Diff = ({current, prev}) => {
-  let diff = ((current.toNumber() - prev.toNumber())/ prev.toNumber() * 100).toFixed(4)
+  let diff = ((current.sub(prev).muln(1000000).div(prev).toNumber())/10000).toFixed(4)
+  let signal = current.gt(prev) ? '+' : '-'
   return (
     <span 
       style={{
         background: "#C2FCE0",
         borderRadius: "4px",
-        color: "#008D6A",
+        color: current.gt(prev) ? "#008D6A" : "#f5c7c1",
         marginLeft: "5px",
         paddingLeft: "3px"
       }}
     >
-      + {diff}%
+      {signal} {diff}%
     </span>
   )
 }
