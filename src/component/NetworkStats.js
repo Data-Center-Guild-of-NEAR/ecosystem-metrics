@@ -43,13 +43,13 @@ export default () => {
   return <div style={{textAlign: "left"}}>
           <h4>Network Situation</h4>
           <div>Total Inflation <Tooltip text={term.network_gdp} /> : <strong className="green">{formatWithCommas(gdp.toString())} Ⓝ</strong>
-              {gdp && <Diff current={gdp} prev={new BN(total_inflation["2021-02-22"])} />}</div>
+              {gdp && <Diff current={gdp} prev={new BN(total_inflation["2021-03-08"])} />}</div>
           <div>Total staking rewards <Tooltip text={term.total_staking_rewards} /> : <strong className="green">{formatWithCommas(stakeReward.toString())} Ⓝ</strong>
-              {stakeReward && <Diff current={stakeReward} prev={new BN(total_staking_reward["2021-02-22"])} />}</div>
+              {stakeReward && <Diff current={stakeReward} prev={new BN(total_staking_reward["2021-03-08"])} />}</div>
           <div>Inception to date of Gas Fee <Tooltip text={term.gas_fee} /> : <strong className="green">{formatWithCommas(gasFee)} Ⓝ </strong>
               {gasFeeWeekAgo && <Diff current={gasFee} prev={gasFeeWeekAgo} />}</div>
           <div>Total volume transacted <Tooltip text={term.total_deposit} /> : <strong className="green">{formatWithCommas(depositAmount.toString())} Ⓝ </strong>
-              {depositAmount && <Diff current={depositAmount} prev={new BN(total_volume_transacted["2021-02-22"])}/>}</div>
+              {depositAmount && <Diff current={depositAmount} prev={new BN(total_volume_transacted["2021-03-08"])}/>}</div>
         </div>
 }
 

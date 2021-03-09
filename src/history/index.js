@@ -6,6 +6,7 @@ export const partner_dapp = {
   "2021-02-16": 6,
   "2021-02-22": 6,
   "2021-03-01": 6,
+  "2021-03-08": 6
 }
 
 export const total_inflation = {
@@ -16,6 +17,7 @@ export const total_inflation = {
   "2021-02-16": "16028973",
   "2021-02-22": "16792099",
   "2021-03-01": "17695102",
+  "2021-03-08": "18526078"
 }
 
 export const total_staking_reward = {
@@ -26,6 +28,7 @@ export const total_staking_reward = {
   "2021-02-16": "16033248",
   "2021-02-22": "16796435",
   "2021-03-01": "17699502",
+  "2021-03-08": "18530628"
 }
 
 export const total_volume_transacted = {
@@ -36,4 +39,5 @@ export const total_volume_transacted = {
   "2021-02-16": "2921070647",
   "2021-02-22": "2957450212",
   "2021-03-01": "3001250385",
+  "2021-03-08": "3044358249"
 }
