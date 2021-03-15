@@ -17,6 +17,8 @@ export default () => {
   const [gasFee, setFee] = useState('');
   const [gasFeeWeekAgo, setFeeWeekAgo] = useState('');
   const [stakeReward, setStaking] = useState('');
+  const [totalDeposit, setDeposit] = useState('')
+  const [totalDepositWeekAgo, setDepositWeekAgo] = useState('')
 
   const Subscription = useCallback(async () => {
     let { totalGas, weekAgoGas } = await new StatsApi().teraGasAggregatedByDate()
@@ -28,11 +30,21 @@ export default () => {
     let fee = new BN(totalGas).mul(new BN(TERA_GAS_UNIT)).mul(new BN(gasPrice)).div(new BN(NEAR_NOMINATION))
     let weekAgoFee = new BN(weekAgoGas).mul(new BN(TERA_GAS_UNIT)).mul(new BN(gasPrice)).div(new BN(NEAR_NOMINATION))
 
-
+    //total deposit
+    let depositList = await new StatsApi().depositAmountAggregatedByDate()
+    let totalDeposit = depositList.map(
+      (account) => new BN(account.depositAmount).div(new BN(NEAR_NOMINATION))
+    ).reduce((deposit, current) => current.add(deposit), new BN(0))
+    let weekAgoDeposit = depositList.slice(0, depositList.length - 7).map(
+      (account) => new BN(account.depositAmount).div(new BN(NEAR_NOMINATION))
+    ).reduce((deposit, current) => current.add(deposit), new BN(0))
+    
     setGDP(gdp)
     setFee(fee)
     setFeeWeekAgo(weekAgoFee)
     setStaking(gdp.add(fee))
+    setDeposit(totalDeposit)
+    setDepositWeekAgo(weekAgoDeposit)
   }, []);
 
   useEffect(() => Subscription(), [Subscription]);
@@ -45,6 +57,8 @@ export default () => {
               {stakeReward && <Diff current={stakeReward} prev={new BN(total_staking_reward["2021-03-08"])} />}</div>
           <div>Inception to date of Gas Fee <Tooltip text={term.gas_fee} /> : <strong className="green">{formatWithCommas(gasFee)} Ⓝ </strong>
               {gasFeeWeekAgo && <Diff current={gasFee} prev={gasFeeWeekAgo} />}</div>
+          <div>Total token volume transacted:  <Tooltip text={term.total_deposit} /> : <strong className="green">{formatWithCommas(totalDeposit.toString())} Ⓝ</strong>
+              {totalDepositWeekAgo && <Diff current={totalDeposit} prev={totalDepositWeekAgo} />}</div>
         </div>
 }
 

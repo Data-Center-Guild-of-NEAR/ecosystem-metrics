@@ -89,7 +89,7 @@ export default () => {
       ],
       series: [
         {
-          name: "Daily Developer",
+          name: "Daily Token Transacted",
           type: "line",
           lineStyle: {
             color: "#4f44e0",
@@ -118,12 +118,12 @@ export default () => {
   const prevDeposit = Number(deposit[deposit.length-8])
   return (
     <div>
-      <h3>Daily Deposit Transacted <Tooltip text={term.total_deposit} /> : <strong className="green">{formatWithCommas(currentDeposit)} Ⓝ</strong>
+      <h3>Daily Token Transacted Volume<Tooltip text={term.deposit_by_day} /> : <strong className="green">{formatWithCommas(currentDeposit)} Ⓝ</strong>
           {prevDeposit && <Diff current={currentDeposit} prev={prevDeposit} />}
       </h3>
       <ReactEcharts
               option={getOption(
-                "Daily Amount of Deposit transacted",
+                "Daily Amount of Token Deposit transacted",
                 date,
                 deposit
               )}

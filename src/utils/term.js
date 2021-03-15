@@ -10,7 +10,8 @@ export const term = {
   inflation_rate: "Real time inflation rate for NEAR token.",
   gas_fee: "Total gas fee for transactions. Its starting date is 2020-07-21.",
   total_staking_rewards: "Total amount of staking rewards from rewards starts date.",
-  total_deposit: "Total transaction amount from transfer and function call aggregated by day.",
+  total_deposit: "Total token transaction amount from transfer and function call",
+  deposit_by_day: "Token transaction amount from transfer and function call aggregated by day",
   monthly_github_developer: "Number of developer contribute to NEAR github repo within a month",
   weekly_github_developer: "Number of developer contribute to NEAR github repo within a week",
   partner_count: "Number of dapp that deployed on the NEAR mainnet"

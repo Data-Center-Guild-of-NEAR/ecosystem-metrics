@@ -1,6 +1,6 @@
 /* eslint-disable import/no-anonymous-default-export */
 import React, { useState, useEffect } from "react";
-import { Spinner, Row } from "react-bootstrap";
+import { Spinner, Row, Tabs, Tab } from "react-bootstrap";
 import ReactEcharts from "echarts-for-react";
 
 import StatsApi from "../explorer-api/stats";
@@ -86,7 +86,7 @@ export default () => {
       ],
       series: [
         {
-          name: "Daily Developer",
+          name: "Daily Active Accounts",
           type: "line",
           lineStyle: {
             color: "#4f44e0",
@@ -112,7 +112,7 @@ export default () => {
           </Row>;;
   } 
   const currentAccounts = Number(activetAccounts[activetAccounts.length-1])
-  const prevAccounts = Number(activetAccounts[activetAccounts.length-2])
+  const prevAccounts = Number(activetAccounts[activetAccounts.length-8])
   return (
     <div>
       <h3>Daily Active Accounts <Tooltip text={term.current_active_accounts} /> : <strong className="green">{currentAccounts}</strong>
@@ -120,7 +120,7 @@ export default () => {
       </h3>
       <ReactEcharts
               option={getOption(
-                "Daily Amount of Active Accounts",
+                "Daily Active Accounts",
                 date,
                 activetAccounts
               )}
