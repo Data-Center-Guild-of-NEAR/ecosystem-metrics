@@ -10,13 +10,12 @@ import { TERA_GAS_UNIT, INITIAL_SUPPLY } from "../utils/const";
 import Tooltip from "../utils/Tooltip";
 import { term } from "../utils/term";
 import { formatWithCommas } from "../utils/convert";
-import { total_inflation, total_staking_reward, total_volume_transacted} from "../history/index";
+import { total_inflation, total_staking_reward } from "../history/index";
 
 export default () => {
   const [gdp, setGDP] = useState('');
   const [gasFee, setFee] = useState('');
   const [gasFeeWeekAgo, setFeeWeekAgo] = useState('');
-  const [depositAmount, setDeposit] = useState('');
   const [stakeReward, setStaking] = useState('');
 
   const Subscription = useCallback(async () => {
@@ -28,13 +27,11 @@ export default () => {
     //fee
     let fee = new BN(totalGas).mul(new BN(TERA_GAS_UNIT)).mul(new BN(gasPrice)).div(new BN(NEAR_NOMINATION))
     let weekAgoFee = new BN(weekAgoGas).mul(new BN(TERA_GAS_UNIT)).mul(new BN(gasPrice)).div(new BN(NEAR_NOMINATION))
-    //total deposit
-    let totalDeposit = await new StatsApi().totalDeposit()
+
 
     setGDP(gdp)
     setFee(fee)
     setFeeWeekAgo(weekAgoFee)
-    setDeposit(new BN(totalDeposit).div(new BN(NEAR_NOMINATION)))
     setStaking(gdp.add(fee))
   }, []);
 
@@ -48,8 +45,6 @@ export default () => {
               {stakeReward && <Diff current={stakeReward} prev={new BN(total_staking_reward["2021-03-08"])} />}</div>
           <div>Inception to date of Gas Fee <Tooltip text={term.gas_fee} /> : <strong className="green">{formatWithCommas(gasFee)} Ⓝ </strong>
               {gasFeeWeekAgo && <Diff current={gasFee} prev={gasFeeWeekAgo} />}</div>
-          <div>Total volume transacted <Tooltip text={term.total_deposit} /> : <strong className="green">{formatWithCommas(depositAmount.toString())} Ⓝ </strong>
-              {depositAmount && <Diff current={depositAmount} prev={new BN(total_volume_transacted["2021-03-08"])}/>}</div>
         </div>
 }
 

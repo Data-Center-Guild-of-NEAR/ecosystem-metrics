@@ -15,8 +15,7 @@ export default class StatsApi extends ExplorerApi {
     return
   }
 
-  async totalDeposit() {
-    let totalAmount = await this.call('total-deposit-amount')
-    return totalAmount.totalDepositAmount
+  async depositAmountAggregatedByDate() {
+    return await this.call('deposit-amount-aggregated-by-date')
   }
 }

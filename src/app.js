@@ -9,6 +9,7 @@ import ActiveValidators from "./component/ActiveValidators";
 import NetworkStats from "./component/NetworkStats";
 import GithubStats from "./component/GithubStats";
 import Partner from "./component/Partner";
+import DepositAmount from "./component/DepositAmount";
 
 import "./app.css"
 
@@ -32,6 +33,8 @@ export default () => {
         <GithubStats />
         <hr />
         <ActiveAccounts />
+        <hr />
+        <DepositAmount />
       </Container>
   </Container>
 }
