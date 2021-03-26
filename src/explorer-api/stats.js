@@ -5,6 +5,10 @@ export default class StatsApi extends ExplorerApi {
     return await this.call("active-accounts-count-aggregated-by-date");    
   }
 
+  async activeAccountsCountAggregatedByWeek() {
+    return await this.call("active-accounts-count-aggregated-by-week");    
+  }
+
   async teraGasAggregatedByDate() {
     let gasList = await this.call('teragas-used-aggregated-by-date');
     if(gasList){

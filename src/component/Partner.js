@@ -8,6 +8,6 @@ import { partner_dapp } from "../history/index";
 export default () => (
       <div>
         <h4>Deployed Partner DApp Count <Tooltip text={term.partner_count} /></h4>
-        <h4><strong className="green">{partner_dapp["2021-03-15"]}</strong></h4>
+        <h4><strong className="green">{partner_dapp["2021-03-22"]}</strong></h4>
       </div>
 )

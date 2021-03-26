@@ -13,6 +13,8 @@ export default () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [activetAccounts, setAccounts] = useState([]);
   const [date, setDate] = useState([]);
+  const [weeklyAccounts, setAccountsWeek] = useState([])
+  const [week, setWeek] = useState([])
 
   useEffect(() => {
     new StatsApi().activeAccountsCountAggregatedByDate().then((accounts) => {
@@ -25,12 +27,22 @@ export default () => {
         );
         setAccounts(newAccounts);
         setDate(date);
-        setIsLoaded(true)
       }
     }).catch(err => {
-      setIsLoaded(true)
       setError(err);
-    });
+    })
+    new StatsApi().activeAccountsCountAggregatedByWeek().then((accounts) => {
+      if(accounts){
+        const weekAccounts = accounts.map((account) => account.accountsCount)
+        const week = accounts.map((account) =>account.date.slice(0, 10))
+        setAccountsWeek(weekAccounts)
+        setWeek(week)
+      }
+    }).catch(err => {
+      setError(err);
+    })
+    setIsLoaded(true)
+
   }, []);
 
   const chartStyle = {
@@ -86,7 +98,7 @@ export default () => {
       ],
       series: [
         {
-          name: "Daily Active Accounts",
+          name: "Active Accounts",
           type: "line",
           lineStyle: {
             color: "#4f44e0",
@@ -113,19 +125,38 @@ export default () => {
   } 
   const currentAccounts = Number(activetAccounts[activetAccounts.length-1])
   const prevAccounts = Number(activetAccounts[activetAccounts.length-8])
+  const currentWeekly = Number(weeklyAccounts[weeklyAccounts.length -1])
+  const prevWeekly = Number(weeklyAccounts[weeklyAccounts.length - 2])
   return (
     <div>
       <h3>Daily Active Accounts <Tooltip text={term.current_active_accounts} /> : <strong className="green">{currentAccounts}</strong>
           {prevAccounts && <Diff current={currentAccounts} prev={prevAccounts} />}
       </h3>
-      <ReactEcharts
-              option={getOption(
-                "Daily Active Accounts",
-                date,
-                activetAccounts
-              )}
-              style={chartStyle}
-            />
+      <h3>Weeikly Active Accounts <Tooltip text={term.weekly_active_accounts} /> : <strong className="green">{currentWeekly}</strong>
+          {prevWeekly && <Diff current={currentWeekly} prev={prevWeekly} />} 
+      </h3>
+      <Tabs defaultActiveKey="daily" id="activeAccounts">
+        <Tab eventKey="daily" title="Daily">
+          <ReactEcharts
+                  option={getOption(
+                    "Daily Active Accounts",
+                    date,
+                    activetAccounts
+                  )}
+                  style={chartStyle}
+                />
+        </Tab>
+        <Tab eventKey="weekly" title="Weekly">
+        <ReactEcharts
+                  option={getOption(
+                    "Weekly Active Accounts",
+                    week,
+                    weeklyAccounts
+                  )}
+                  style={chartStyle}
+                />
+        </Tab>
+      </Tabs>
     </div>
     )
 }
