@@ -63,7 +63,7 @@ export default () => {
 }
 
 const Diff = ({current, prev}) => {
-  let diff = ((current.sub(prev).muln(1000000).div(prev).toNumber())/10000).toFixed(4)
+  let diff = ((current.sub(prev).muln(1000000).div(prev).toNumber())/10000).toFixed(2)
   let signal = current.gt(prev) ? '+' : '-'
   return (
     <span 

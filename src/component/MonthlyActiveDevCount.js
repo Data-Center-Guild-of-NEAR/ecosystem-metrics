@@ -186,7 +186,7 @@ export default () => {
 }
 
 export const Diff = ({current, prev}) => {
-  let diff = ( (current - prev) / prev * 100 ).toFixed(4)
+  let diff = ( (current - prev) / prev * 100 ).toFixed(2)
   let signal = current > prev ? '+' : ''
   return (
     <span 
