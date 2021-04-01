@@ -16,7 +16,6 @@ import "./app.css"
 export default () => {
   return <Container>
       <h1 style={{fontWeight:"900"}}>Ecosystem Metrics</h1>
-      <Partner />
       <Container>
         <Row>
           <Col md="4">
@@ -24,6 +23,9 @@ export default () => {
           </Col>
           <Col>
             <NetworkStats />
+          </Col>
+          <Col>
+            <Partner />
           </Col>
         </Row>
      

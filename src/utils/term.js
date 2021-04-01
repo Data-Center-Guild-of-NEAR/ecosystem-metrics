@@ -14,6 +14,6 @@ export const term = {
   deposit_by_day: "Token transaction amount from transfer and function call aggregated by day",
   monthly_github_developer: "Number of developer contribute to NEAR github repo within a month",
   weekly_github_developer: "Number of developer contribute to NEAR github repo within a week",
-  partner_count: "Number of dapp that deployed on the NEAR mainnet"
+  partner_count: "Company raising in NEAR ecosystem"
 }
 
