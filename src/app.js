@@ -17,17 +17,20 @@ export default () => {
   return <Container>
       <h1 style={{fontWeight:"900"}}>Ecosystem Metrics</h1>
       <Container>
-        <Row>
-          <Col md="4">
-            <ActiveValidators />
-          </Col>
-          <Col>
-            <NetworkStats />
-          </Col>
-          <Col>
-            <Partner />
-          </Col>
-        </Row>
+        <Container>
+          <Row noGutters className="pl-10 pr-3">
+            <Col>
+              <ActiveValidators />
+            </Col>
+            <Col>
+              <Partner />
+            </Col>
+          </Row>
+          <Row noGutters>
+              <NetworkStats />
+          </Row>
+        </Container>
+
      
         <hr />
         <MonthlyActiveDevCount />
