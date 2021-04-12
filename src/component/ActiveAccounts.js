@@ -132,7 +132,7 @@ export default () => {
       <h3>Daily Active Accounts <Tooltip text={term.current_active_accounts} /> : <strong className="green">{currentAccounts}</strong>
           {prevAccounts && <Diff current={currentAccounts} prev={prevAccounts} />}
       </h3>
-      <h3>Weeikly Active Accounts <Tooltip text={term.weekly_active_accounts} /> : <strong className="green">{currentWeekly}</strong>
+      <h3>Weekly Active Accounts <Tooltip text={term.weekly_active_accounts} /> : <strong className="green">{currentWeekly}</strong>
           {prevWeekly && <Diff current={currentWeekly} prev={prevWeekly} />} 
       </h3>
       <Tabs defaultActiveKey="daily" id="activeAccounts">
