@@ -22,4 +22,12 @@ export default class StatsApi extends ExplorerApi {
   async depositAmountAggregatedByDate() {
     return await this.call('deposit-amount-aggregated-by-date')
   }
+
+  async getTotalSupply(height) {
+    let result = await this.call("select:INDEXER_BACKEND",[
+      `select total_supply from blocks where block_height = :height`,
+      {height}
+    ])
+    return result[0].total_supply
+  }
 }
