@@ -34,8 +34,6 @@ export default () => {
     let height = block.header.height - 604800
     let prevTotalSupply = await new StatsApi().getTotalSupply(height)
     let preGdp = new BN(prevTotalSupply).sub(new BN(INITIAL_SUPPLY)).div(new BN(NEAR_NOMINATION))
-    console.log(preGdp.toString())
-    console.log(gdp.toString())
     //fee
     let fee = new BN(totalGas).mul(new BN(TERA_GAS_UNIT)).mul(new BN(gasPrice)).div(new BN(NEAR_NOMINATION))
     let weekAgoFee = new BN(weekAgoGas).mul(new BN(TERA_GAS_UNIT)).mul(new BN(gasPrice)).div(new BN(NEAR_NOMINATION))
@@ -79,7 +77,6 @@ export default () => {
 }
 
 const Diff = ({current, prev}) => {
-  console.log(current.toString(), prev.toString())
   let diff = ((current.sub(prev).muln(1000000).div(prev).toNumber())/10000).toFixed(2)
   let signal = current.gt(prev) ? '+' : '-'
   return (

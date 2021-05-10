@@ -39,7 +39,8 @@ export default () => {
     let mm7ago = before7Daysdate.getUTCMonth()+1; 
     let yyyy7ago = before7Daysdate.getUTCFullYear();
     let month = mm7ago < 10 ? '-0' : '-';
-    let date7ago = yyyy7ago + month + mm7ago + '-' + dd7ago;
+    let day = dd7ago < 10 ? '-0' : '-';
+    let date7ago = yyyy7ago + month + mm7ago  + day + dd7ago;
 
     let developer_list = "developer_list_by_"+ mm + "_" + dd + "_" + yyyy;
     console.log(developer_list)
