@@ -30,4 +30,12 @@ export default class StatsApi extends ExplorerApi {
     ])
     return result[0].total_supply
   }
+
+  async transactionsAggregatedByDate() {
+    return await this.call('transactions-count-aggregated-by-date')
+  }
+
+  async newAccountsCountAggregatedByDate() {
+    return await this.call('new-accounts-count-aggregated-by-date')
+  }
 }

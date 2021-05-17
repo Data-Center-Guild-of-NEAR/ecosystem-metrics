@@ -10,6 +10,8 @@ import NetworkStats from "./component/NetworkStats";
 import GithubStats from "./component/GithubStats";
 import Partner from "./component/Partner";
 import DepositAmount from "./component/DepositAmount";
+import TransactionsAmount from "./component/TransactionsAmount";
+import NewAccounts from "./component/NewAccounts";
 
 import "./app.css"
 
@@ -31,7 +33,6 @@ export default () => {
           </Row>
         </Container>
 
-     
         <hr />
         <MonthlyActiveDevCount />
         <hr />
@@ -39,7 +40,11 @@ export default () => {
         <hr />
         <ActiveAccounts />
         <hr />
+        <NewAccounts />
+        <hr />
         <DepositAmount />
+        <hr />
+        <TransactionsAmount />
       </Container>
   </Container>
 }

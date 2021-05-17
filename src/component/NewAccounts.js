@@ -2,41 +2,39 @@
 import React, { useState, useEffect } from "react";
 import { Spinner, Row, Tabs, Tab } from "react-bootstrap";
 import ReactEcharts from "echarts-for-react";
-import BN from "bn.js"
-import { NEAR_NOMINATION } from "near-api-js/lib/utils/format";
 
 import StatsApi from "../explorer-api/stats";
 import Tooltip from "../utils/Tooltip";
 import { term } from "../utils/term";
 import { Diff } from "./MonthlyActiveDevCount";
-import { formatWithCommas } from "../utils/convert";
 import { cumulativeSumArray} from "../utils/convert"
 
 export default () => {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [deposit, setDeposit] = useState([]);
+  const [newAccounts, setAccounts] = useState([]);
   const [date, setDate] = useState([]);
-  const [cumulativeDeposit, setTotal] = useState([]);
+  const [cumulativeNewAccountsByDate, setTotal] = useState([]);
 
   useEffect(() => {
-    new StatsApi().depositAmountAggregatedByDate().then((depositList) => {
-      if (depositList) {
-        const deposit = depositList.map(
-          (account) => new BN(account.depositAmount).div(new BN(NEAR_NOMINATION)).toNumber()
+    new StatsApi().newAccountsCountAggregatedByDate().then((accounts) => {
+      if (accounts) {
+        const newAccounts = accounts.map(
+          (account) => Number(account.accountsCount)
         );
-        const date = depositList.map((account) =>
+        const date = accounts.map((account) =>
           account.date.slice(0, 10)
         );
-        setDeposit(deposit);
-        setTotal(cumulativeSumArray(deposit));
+        setAccounts(newAccounts);
+        setTotal(cumulativeSumArray(newAccounts));
         setDate(date);
         setIsLoaded(true)
       }
     }).catch(err => {
-      setIsLoaded(true)
       setError(err);
-    });
+      setIsLoaded(true)
+    })
+
   }, []);
 
   const chartStyle = {
@@ -92,7 +90,7 @@ export default () => {
       ],
       series: [
         {
-          name: "Daily Token Transacted",
+          name: "Active Accounts",
           type: "line",
           lineStyle: {
             color: "#4f44e0",
@@ -117,30 +115,30 @@ export default () => {
             <Spinner animation="grow" variant="primary" />
           </Row>;;
   } 
-  const currentDeposit = Number(deposit[deposit.length-1])
-  const prevDeposit = Number(deposit[deposit.length-8])
+  const currentAccounts = Number(newAccounts[newAccounts.length-1])
+  const prevAccounts = Number(newAccounts[newAccounts.length-8])
   return (
     <div>
-      <h3>Daily Token Transacted Volume<Tooltip text={term.deposit_by_day} /> : <strong className="green">{formatWithCommas(currentDeposit)} Ⓝ</strong>
-          {prevDeposit && <Diff current={currentDeposit} prev={prevDeposit} />}
+      <h3>Daily Number of New Accounts<Tooltip text={term.new_account_count} /> : <strong className="green">{currentAccounts}</strong>
+          {prevAccounts && <Diff current={currentAccounts} prev={prevAccounts} />}
       </h3>
       <Tabs defaultActiveKey="daily" id="activeAccounts">
         <Tab eventKey="daily" title="Daily">
           <ReactEcharts
-              option={getOption(
-                "Daily Amount of Token Deposit transacted",
-                date,
-                deposit
-              )}
-              style={chartStyle}
-            />
+                  option={getOption(
+                    "Daily Active Accounts",
+                    date,
+                    newAccounts
+                  )}
+                  style={chartStyle}
+                />
         </Tab>
         <Tab eventKey="total" title="Total">
           <ReactEcharts
                     option={getOption(
-                      "Total Amount of Token Deposit transacted",
+                      "Total Number of New Accounts",
                       date,
-                      cumulativeDeposit
+                      cumulativeNewAccountsByDate
                     )}
                     style={chartStyle}
           />
