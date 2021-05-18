@@ -90,7 +90,7 @@ export default () => {
       ],
       series: [
         {
-          name: "Active Accounts",
+          name: "New Accounts",
           type: "line",
           lineStyle: {
             color: "#4f44e0",
@@ -136,7 +136,7 @@ export default () => {
         <Tab eventKey="total" title="Total">
           <ReactEcharts
                     option={getOption(
-                      "Total Number of New Accounts",
+                      "Total Amount of New Accounts",
                       date,
                       cumulativeNewAccountsByDate
                     )}
