@@ -20,6 +20,9 @@ export default () => (
               <li>
                 <a href="https://somniumspace.com/" target="_blank" rel="noreferrer">Somniun Space</a>
               </li>
+              <li>
+                <a href="https://corgis3d.com/" target="_blank" rel="noreferrer">Corgis 3D</a>
+              </li>
             </ul>
           </Col>
           <Col>
