@@ -1,9 +1,11 @@
 import React, {useState, useEffect} from "react";
-import { Spinner, Row } from "react-bootstrap";
+import { Spinner, Row,  Tabs, Tab } from "react-bootstrap";
 import ReactEcharts from "echarts-for-react";
 
 import Tooltip from "../utils/Tooltip";
 import {term} from "../utils/term";
+
+import nearData from "../history/near-protocol.json"
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
@@ -13,6 +15,11 @@ export default () => {
   const [weeklyDeveloper, setWeeklyCount] = useState(null);
   const [developer, setCount] = useState([]);
   const [date, setDate] = useState([]);
+
+  const [monthNumber, setMonthNumber] = useState([])
+  const [month, setMonth] = useState([])
+  const [weekNumber, setWeekNumber] = useState([])
+  const [week, setWeek] = useState([])
 
   const getTotalUnique = (res) => {
     let result = res.map(dev => dev.developerList).reduce((dev, current) => current.concat(dev), [])
@@ -25,6 +32,53 @@ export default () => {
                     return res.indexOf(dev) === index
                 }).filter((dev) => !dev.includes("dependabot"))
 
+  const getMonthAndWeek = () => {
+    let data = nearData.map(d => ({date:d.date, developerList: d.developer_set}))
+    let monthlyDeveloper = []
+    let temp = [data[0]]
+
+    for(let i=0;i<data.length -1;i++){
+      if(data[i].date.slice(0,7) === data[i+1].date.slice(0,7)){
+        temp = temp.concat(data[i+1])
+      }else {
+        let md = getTotalUnique(temp)
+        let m = {month: data[i].date.slice(0,7), count: md.length}
+        monthlyDeveloper.push(m)
+        temp = [data[i+1]]
+      }
+    }
+
+    let md = getTotalUnique(temp)
+    let m = {month: data[data.length-1].date.slice(0,7), count: md.length}
+    monthlyDeveloper.push(m)
+    
+    monthlyDeveloper = monthlyDeveloper.slice(1)
+    setMonthNumber(monthlyDeveloper.map(m => m.count))
+    setMonth(monthlyDeveloper.map(m => m.month))
+
+    let weeklyDeveloper = []
+    let week_t = [data[0]]
+    for(let i=1;i<data.length -1;i++) {
+      if(i%7 !== 0){
+        week_t.concat(data[i])
+      }else {
+        let wd = getTotalUnique(week_t)
+        let w = {week: week_t[0].date, count: wd.length}
+        weeklyDeveloper.push(w)
+        week_t = [data[i]]
+      }
+    }
+    let wd = getTotalUnique(week_t)
+    let w = {week: week_t[0].date, count: wd.length}
+    weeklyDeveloper.push(w)
+
+    setWeekNumber(weeklyDeveloper.map(w => w.count))
+    setWeek(weeklyDeveloper.map(w=>w.week))
+    
+  }
+
+  useEffect(getMonthAndWeek,[])
+  
   useEffect(() => {
 
     let today = new Date(); 
@@ -64,6 +118,7 @@ export default () => {
         //get total
         let weekIndex = res.findIndex(r => r.date === date7ago)
         let weekRes = res.slice(weekIndex, res.length)
+
         let monthlyDeveloper = getTotalUnique(res)
         let weeklyDeveloper = getTotalUnique(weekRes)
         //get list
@@ -89,7 +144,7 @@ export default () => {
     .catch(err => {
       console.error(err);
     });
-  }, [])
+  },[])
 
   const chartStyle = {
     height: "480px",
@@ -144,7 +199,7 @@ export default () => {
       ],
       series: [
         {
-          name: "Daily Developer",
+          name: "Active Developer",
           type: "line",
           lineStyle: {
             color: "#4f44e0",
@@ -173,7 +228,9 @@ export default () => {
       <div>
         <h3>Monthly Active Developer(External) <Tooltip text={term.monthly_github_developer} />: <strong className="green">{monthlyDeveloper}</strong></h3>
         <h3>Weekly Active Developer(External) <Tooltip text={term.weekly_github_developer} />: <strong className="green">{weeklyDeveloper}</strong></h3>
-        <ReactEcharts
+        <Tabs defaultActiveKey="daily" id="activeAccounts">
+        <Tab eventKey="daily" title="Daily">
+          <ReactEcharts
               option={getOption(
                 "Active Developer(External)",
                 date,
@@ -181,6 +238,29 @@ export default () => {
               )}
               style={chartStyle}
             />
+        </Tab>
+        <Tab eventKey="weekly" title="Weekly">
+          <ReactEcharts
+              option={getOption(
+                "Weekly active Developer(External)",
+                week,
+                weekNumber
+              )}
+              style={chartStyle}
+            />
+        </Tab>
+        <Tab eventKey="monthly" title="Monthly">
+          <ReactEcharts
+              option={getOption(
+                "Monthly active Developer(External)",
+                month,
+                monthNumber
+              )}
+              style={chartStyle}
+            />
+        </Tab>
+        </Tabs>
+        
       </div>
   );
 }
