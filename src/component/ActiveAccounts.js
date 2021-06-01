@@ -15,6 +15,8 @@ export default () => {
   const [date, setDate] = useState([]);
   const [weeklyAccounts, setAccountsWeek] = useState([])
   const [week, setWeek] = useState([])
+  const [monthlyAccounts, setAccountsMonth] = useState([])
+  const [month, setMonth] = useState([])
 
   useEffect(() => {
     new StatsApi().activeAccountsCountAggregatedByDate().then((accounts) => {
@@ -41,6 +43,17 @@ export default () => {
     }).catch(err => {
       setError(err);
     })
+    new StatsApi().queryActiveAccountsCountAggregatedByMonth().then((accounts) => {
+      if(accounts){
+        const monthAccounts = accounts.map(account => account.active_accounts_count_by_month)
+        const month = accounts.map((account) =>account.date.slice(0, 10))
+        setAccountsMonth(monthAccounts)
+        setMonth(month)
+      }
+    }).catch(err => {
+      setError(err);
+    })
+
     setIsLoaded(true)
 
   }, []);
@@ -147,7 +160,7 @@ export default () => {
                 />
         </Tab>
         <Tab eventKey="weekly" title="Weekly">
-        <ReactEcharts
+          <ReactEcharts
                   option={getOption(
                     "Weekly Active Accounts",
                     week,
@@ -156,6 +169,19 @@ export default () => {
                   style={chartStyle}
                 />
         </Tab>
+        {
+          month.length>0 &&
+          <Tab eventKey="monthly" title="Monthly">
+            <ReactEcharts
+                    option={getOption(
+                      "Monthly Active Accounts",
+                      month,
+                      monthlyAccounts
+                    )}
+                    style={chartStyle}
+                  />
+          </Tab>
+        }
       </Tabs>
     </div>
     )
