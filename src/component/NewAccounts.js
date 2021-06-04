@@ -122,11 +122,11 @@ export default () => {
       <h3>Daily Number of New Accounts<Tooltip text={term.new_account_count} /> : <strong className="green">{currentAccounts}</strong>
           {prevAccounts && <Diff current={currentAccounts} prev={prevAccounts} />}
       </h3>
-      <Tabs defaultActiveKey="daily" id="activeAccounts">
+      <Tabs defaultActiveKey="daily" id="newAccounts">
         <Tab eventKey="daily" title="Daily">
           <ReactEcharts
                   option={getOption(
-                    "Daily Active Accounts",
+                    "Daily New Accounts",
                     date,
                     newAccounts
                   )}
