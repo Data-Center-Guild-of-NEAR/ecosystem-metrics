@@ -90,7 +90,7 @@ export default () => {
       ],
       series: [
         {
-          name: "Daily Token Transacted",
+          name: "Daily Transactions",
           type: "line",
           lineStyle: {
             color: "#4f44e0",

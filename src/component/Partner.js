@@ -39,6 +39,12 @@ export default () => (
               <li>
                 <a href="https://supraoracles.com/" target="_blank" rel="noreferrer">Supra Oracles</a>
               </li>
+              <li>
+                <a href="https://www.sputnik.fund/#/" target="_blank" rel="noreferrer">Sputnik DAO</a>
+              </li>
+              <li>
+                <a href="https://stats.sputnik.fund/" target="_blank" rel="noreferrer">Sputnik DAO Stats</a>
+              </li>
             </ul>
           </Col>
         </Row>
