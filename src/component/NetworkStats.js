@@ -109,36 +109,6 @@ export default () => {
 
     setStake(stake);
 
-    // lockup
-    // const lockupAccountIds = await new StatsApi().getLockupAccountIds(
-    //   currentHeight
-    // );
-    // console.log('get all lockup Accounts', lockupAccountIds.length);
-    // let allLockupTokenAmounts = [];
-    // for (let account of lockupAccountIds) {
-    //   const lockupState = await viewLockupState(
-    //     account.account_id,
-    //     currentHeight
-    //   );
-    //   console.log(lockupState);
-    //   if (lockupState) {
-    //     let amount = await getLockedTokenAmount(
-    //       lockupState,
-    //       account.account_id,
-    //       block
-    //     );
-    //     allLockupTokenAmounts.push(amount);
-    //   }
-    // }
-    // const lockedTokens = allLockupTokenAmounts.reduce(
-    //   (acc, current) => acc.add(current),
-    //   new BN(0)
-    // );
-    // console.log(lockedTokens.toString());
-
-    // foundations
-    // const foundationAmount = await getFoundationAmount();
-    // console.log(foundationAmount.toString());
     setLockup(total_lockup['2021-07-13']);
     // setFoundation(foundationAmount);
     setIntersection(
