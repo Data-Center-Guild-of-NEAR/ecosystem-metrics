@@ -12,10 +12,13 @@ export const term = {
   next_validators: 'The number of validating node in next epoch.',
   network_gdp:
     'Inflation for network. It is calculated by current total supply minus the initial supply.',
-  circulating_supply:
+  total_supply:
     'Total circulating supply after genesis supply with staking rewords.',
-  total_stake: ' Total staked token amount in current epoch.',
-  intersection: 'Total circulating supply - total stake',
+  circulating_supply: 'Prediction for issuing supply in current time period. ',
+  total_stake: 'Total staked token amount in current epoch.',
+  total_lockup: 'Total Lock up amount in current epoch',
+  intersection:
+    'Total circulating supply minus total stake and total lockup token',
   inflation_rate: 'Real time inflation rate for NEAR token.',
   gas_fee: 'Total gas fee for transactions. Its starting date is 2020-07-21.',
   total_staking_rewards:

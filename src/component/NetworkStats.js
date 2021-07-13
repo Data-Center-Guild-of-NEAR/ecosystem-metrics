@@ -13,6 +13,7 @@ import { TERA_GAS_UNIT, INITIAL_SUPPLY } from '../utils/const';
 import Tooltip from '../utils/Tooltip';
 import { term } from '../utils/term';
 import { formatWithCommas } from '../utils/convert';
+import { total_lockup } from '../history/index';
 
 export default () => {
   const [gdp, setGDP] = useState('');
@@ -27,23 +28,30 @@ export default () => {
   const [totalDeposit, setDeposit] = useState('');
   const [totalDepositWeekAgo, setDepositWeekAgo] = useState('');
 
-  const [circulatedSupply, setCS] = useState('');
-  const [csWeekAgo, setCSWeekAgo] = useState('');
+  const [totalSupply, setTS] = useState('');
+  const [tsWeekAgo, setTSWeekAgo] = useState('');
 
   const [stake, setStake] = useState('');
+  const [circulatingSupply, setCS] = useState('');
+  const [lockup, setLockup] = useState('');
+  // const [foundation, setFoundation] = useState('');
   const [intersection, setIntersection] = useState('');
 
   const Subscription = useCallback(async () => {
     let { totalGas, weekAgoGas } =
       await new StatsApi().teraGasAggregatedByDate();
-    // total inflation
+    // block info
     let block = await nearRpc.sendJsonRpc('block', { finality: 'final' });
+    // let currentHeight = block.header.height;
+    let height = block.header.height - 604800;
     let gasPrice = block.header.gas_price;
     let totalSupply = block.header.total_supply;
+
+    //total inflation
     let gdp = new BN(totalSupply)
       .sub(new BN(INITIAL_SUPPLY))
       .div(new BN(NEAR_NOMINATION));
-    let height = block.header.height - 604800;
+
     let prevTotalSupply = await new StatsApi().getTotalSupply(height);
     let preGdp = new BN(prevTotalSupply)
       .sub(new BN(INITIAL_SUPPLY))
@@ -78,7 +86,11 @@ export default () => {
     let stake = validators
       .map((va) => va.stake)
       .reduce((prev, curr) => new BN(prev).add(new BN(curr)), new BN('0'));
-    console.log(stake.toString());
+
+    // circulating supply
+    const circulatingSupply = await new StatsApi().getLatestCirculatingSupply();
+    setCS(circulatingSupply.circulating_supply_in_yoctonear);
+
     // settings
     setGDP(gdp);
     setGDPWeekAgo(preGdp);
@@ -92,12 +104,45 @@ export default () => {
     setDeposit(totalDeposit);
     setDepositWeekAgo(weekAgoDeposit);
 
-    setCS(new BN(totalSupply).div(new BN(NEAR_NOMINATION)));
-    setCSWeekAgo(new BN(prevTotalSupply).div(new BN(NEAR_NOMINATION)));
+    setTS(new BN(totalSupply).div(new BN(NEAR_NOMINATION)));
+    setTSWeekAgo(new BN(prevTotalSupply).div(new BN(NEAR_NOMINATION)));
 
     setStake(stake);
+
+    // lockup
+    // const lockupAccountIds = await new StatsApi().getLockupAccountIds(
+    //   currentHeight
+    // );
+    // console.log('get all lockup Accounts', lockupAccountIds.length);
+    // let allLockupTokenAmounts = [];
+    // for (let account of lockupAccountIds) {
+    //   const lockupState = await viewLockupState(
+    //     account.account_id,
+    //     currentHeight
+    //   );
+    //   console.log(lockupState);
+    //   if (lockupState) {
+    //     let amount = await getLockedTokenAmount(
+    //       lockupState,
+    //       account.account_id,
+    //       block
+    //     );
+    //     allLockupTokenAmounts.push(amount);
+    //   }
+    // }
+    // const lockedTokens = allLockupTokenAmounts.reduce(
+    //   (acc, current) => acc.add(current),
+    //   new BN(0)
+    // );
+    // console.log(lockedTokens.toString());
+
+    // foundations
+    // const foundationAmount = await getFoundationAmount();
+    // console.log(foundationAmount.toString());
+    setLockup(total_lockup['2021-07-13']);
+    // setFoundation(foundationAmount);
     setIntersection(
-      new BN(totalSupply).sub(stake).div(new BN(NEAR_NOMINATION))
+      new BN(totalSupply).sub(stake).sub(new BN(total_lockup['2021-07-13']))
     );
   }, []);
 
@@ -107,52 +152,109 @@ export default () => {
     <div style={{ textAlign: 'left' }}>
       <h4>Network Situation</h4>
       <div>
-        <strong>Total circulating supply </strong>{' '}
+        <strong>Total supply </strong> <Tooltip text={term.total_supply} /> :{' '}
+        {totalSupply === '' ? (
+          <span>Loading...</span>
+        ) : (
+          <strong className="green">
+            {formatWithCommas(totalSupply.toString())} Ⓝ
+          </strong>
+        )}
+        {tsWeekAgo && <Diff current={totalSupply} prev={tsWeekAgo} />}
+      </div>
+      <div>
+        <strong>Circulating Supply </strong>{' '}
         <Tooltip text={term.circulating_supply} /> :{' '}
-        <strong className="green">
-          {formatWithCommas(circulatedSupply.toString())} Ⓝ
-        </strong>
-        {csWeekAgo && <Diff current={circulatedSupply} prev={csWeekAgo} />}
+        {circulatingSupply === '' ? (
+          <span>Loading...</span>
+        ) : (
+          <strong className="green">
+            {formatNearAmount(circulatingSupply, 0)} Ⓝ
+          </strong>
+        )}
       </div>
       <div>
         <strong>Total stake </strong> <Tooltip text={term.total_stake} /> :{' '}
-        <strong className="green">
-          {formatNearAmount(stake.toString(), 0)} Ⓝ
-        </strong>
+        {stake === '' ? (
+          <span>Loading...</span>
+        ) : (
+          <strong className="green">
+            {formatNearAmount(stake.toString(), 0)} Ⓝ
+          </strong>
+        )}
       </div>
       <div>
-        <strong>
-          Intersections between lockups/circulating supply and staking{' '}
-        </strong>{' '}
+        <strong>Total Lockedup Amount </strong>{' '}
+        <Tooltip text={term.total_lockup} /> :{' '}
+        {lockup === '' ? (
+          <span>Loading...</span>
+        ) : (
+          <strong className="green">{formatNearAmount(lockup, 0)} Ⓝ</strong>
+        )}
+      </div>
+      {/* <div>
+        <strong>Foundation Fund </strong> <Tooltip text={term.foundation} /> :{' '}
+        {foundation === '' ? (
+          <p>Loading...</p>
+        ) : (
+          <strong className="green">
+            {formatNearAmount(foundation.toString(), 0)} Ⓝ
+          </strong>
+        )}
+      </div> */}
+      <div>
+        <strong>Tokens that are not locked and not staked</strong>{' '}
         <Tooltip text={term.intersection} /> :{' '}
-        <strong className="green">
-          {formatWithCommas(intersection.toString())} Ⓝ
-        </strong>
+        {intersection === '' ? (
+          <span>Loading...</span>
+        ) : (
+          <strong className="green">
+            {formatNearAmount(intersection.toString(), 0)} Ⓝ
+          </strong>
+        )}
       </div>
       <div>
         Total Inflation <Tooltip text={term.network_gdp} /> :{' '}
-        <strong className="green">{formatWithCommas(gdp.toString())} Ⓝ</strong>
+        {gdp === '' ? (
+          <span>Loading...</span>
+        ) : (
+          <strong className="green">
+            {formatWithCommas(gdp.toString())} Ⓝ
+          </strong>
+        )}
         {gdpWeekAgo && <Diff current={gdp} prev={gdpWeekAgo} />}
       </div>
       <div>
         Total staking rewards <Tooltip text={term.total_staking_rewards} /> :{' '}
-        <strong className="green">
-          {formatWithCommas(stakeReward.toString())} Ⓝ
-        </strong>
+        {stakeReward === '' ? (
+          <span>Loading...</span>
+        ) : (
+          <strong className="green">
+            {formatWithCommas(stakeReward.toString())} Ⓝ
+          </strong>
+        )}
         {stakeRewardWeekAgo && (
           <Diff current={stakeReward} prev={stakeRewardWeekAgo} />
         )}
       </div>
       <div>
         Inception to date of Gas Fee <Tooltip text={term.gas_fee} /> :{' '}
-        <strong className="green">{formatWithCommas(gasFee)} Ⓝ </strong>
+        {gasFee === '' ? (
+          <span>Loading...</span>
+        ) : (
+          <strong className="green">{formatWithCommas(gasFee)} Ⓝ </strong>
+        )}
         {gasFeeWeekAgo && <Diff current={gasFee} prev={gasFeeWeekAgo} />}
       </div>
       <div>
         Total token volume transacted: <Tooltip text={term.total_deposit} /> :{' '}
-        <strong className="green">
-          {formatWithCommas(totalDeposit.toString())} Ⓝ
-        </strong>
+        {totalDeposit === '' ? (
+          <span>Loading...</span>
+        ) : (
+          <strong className="green">
+            {formatWithCommas(totalDeposit.toString())} Ⓝ
+          </strong>
+        )}
         {totalDepositWeekAgo && (
           <Diff current={totalDeposit} prev={totalDepositWeekAgo} />
         )}
