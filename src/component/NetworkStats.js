@@ -14,6 +14,7 @@ import Tooltip from '../utils/Tooltip';
 import { term } from '../utils/term';
 import { formatWithCommas } from '../utils/convert';
 import { total_lockup } from '../history/index';
+import { getFoundationAmount, getLockupToken } from '../utils/lockup';
 
 export default () => {
   const [gdp, setGDP] = useState('');
@@ -34,7 +35,7 @@ export default () => {
   const [stake, setStake] = useState('');
   const [circulatingSupply, setCS] = useState('');
   const [lockup, setLockup] = useState('');
-  // const [foundation, setFoundation] = useState('');
+  const [foundation, setFoundation] = useState('');
   const [intersection, setIntersection] = useState('');
 
   const Subscription = useCallback(async () => {
@@ -91,6 +92,9 @@ export default () => {
     const circulatingSupply = await new StatsApi().getLatestCirculatingSupply();
     setCS(circulatingSupply.circulating_supply_in_yoctonear);
 
+    // foundations
+    const foundationAmount = await getFoundationAmount();
+
     // settings
     setGDP(gdp);
     setGDPWeekAgo(preGdp);
@@ -109,14 +113,23 @@ export default () => {
 
     setStake(stake);
 
-    setLockup(total_lockup['2021-07-13']);
-    // setFoundation(foundationAmount);
+    setLockup(total_lockup['2021-07-14']);
+    setFoundation(foundationAmount);
     setIntersection(
-      new BN(totalSupply).sub(stake).sub(new BN(total_lockup['2021-07-13']))
+      new BN(totalSupply).sub(stake).sub(new BN(total_lockup['2021-07-14']))
     );
   }, []);
 
   useEffect(() => Subscription(), [Subscription]);
+
+  useEffect(() => {
+    async function getLockup() {
+      const lockup = await getLockupToken();
+      console.log(lockup);
+      setLockup(lockup);
+    }
+    getLockup();
+  }, []);
 
   return (
     <div style={{ textAlign: 'left' }}>
@@ -162,16 +175,14 @@ export default () => {
           <strong className="green">{formatNearAmount(lockup, 0)} Ⓝ</strong>
         )}
       </div>
-      {/* <div>
+      <div>
         <strong>Foundation Fund </strong> <Tooltip text={term.foundation} /> :{' '}
         {foundation === '' ? (
           <p>Loading...</p>
         ) : (
-          <strong className="green">
-            {formatNearAmount(foundation.toString(), 0)} Ⓝ
-          </strong>
+          <strong className="green">{formatNearAmount(foundation, 0)} Ⓝ</strong>
         )}
-      </div> */}
+      </div>
       <div>
         <strong>Tokens that are not locked and not staked</strong>{' '}
         <Tooltip text={term.intersection} /> :{' '}
