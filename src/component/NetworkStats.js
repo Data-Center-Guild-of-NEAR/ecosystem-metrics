@@ -113,10 +113,10 @@ export default () => {
 
     setStake(stake);
 
-    setLockup(total_lockup['2021-07-14']);
+    setLockup(total_lockup['2021-07-14-2']);
     setFoundation(foundationAmount);
     setIntersection(
-      new BN(totalSupply).sub(stake).sub(new BN(total_lockup['2021-07-14']))
+      new BN(totalSupply).sub(stake).sub(new BN(total_lockup['2021-07-14-2']))
     );
   }, []);
 
