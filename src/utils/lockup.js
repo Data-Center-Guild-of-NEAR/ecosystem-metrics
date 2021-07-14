@@ -197,7 +197,6 @@ export const getLockupToken = async () => {
       account.account_id,
       currentHeight
     );
-    console.log(lockupState);
     if (lockupState) {
       let amount = await getLockedTokenAmount(
         lockupState,
