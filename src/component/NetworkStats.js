@@ -13,7 +13,7 @@ import { TERA_GAS_UNIT, INITIAL_SUPPLY } from '../utils/const';
 import Tooltip from '../utils/Tooltip';
 import { term } from '../utils/term';
 import { formatWithCommas } from '../utils/convert';
-import { total_lockup } from '../history/index';
+import { total_lockup, foundation_history } from '../history/index';
 import { getFoundationAmount, getLockupToken } from '../utils/lockup';
 
 export default () => {
@@ -39,85 +39,117 @@ export default () => {
   const [intersection, setIntersection] = useState('');
 
   const Subscription = useCallback(async () => {
-    let { totalGas, weekAgoGas } =
-      await new StatsApi().teraGasAggregatedByDate();
     // block info
-    let block = await nearRpc.sendJsonRpc('block', { finality: 'final' });
-    // let currentHeight = block.header.height;
-    let height = block.header.height - 604800;
-    let gasPrice = block.header.gas_price;
-    let totalSupply = block.header.total_supply;
+    let block;
+    try {
+      block = await nearRpc.sendJsonRpc('block', { finality: 'final' });
+    } catch (e) {
+      console.log(e);
+    }
+    if (block) {
+      let height = block.header.height - 604800;
+      let gasPrice = block.header.gas_price;
+      let totalSupply = block.header.total_supply;
 
-    //total inflation
-    let gdp = new BN(totalSupply)
-      .sub(new BN(INITIAL_SUPPLY))
-      .div(new BN(NEAR_NOMINATION));
+      //total inflation
+      let gdp = new BN(totalSupply)
+        .sub(new BN(INITIAL_SUPPLY))
+        .div(new BN(NEAR_NOMINATION));
 
-    let prevTotalSupply = await new StatsApi().getTotalSupply(height);
-    let preGdp = new BN(prevTotalSupply)
-      .sub(new BN(INITIAL_SUPPLY))
-      .div(new BN(NEAR_NOMINATION));
-    //fee
-    let fee = new BN(totalGas)
-      .mul(new BN(TERA_GAS_UNIT))
-      .mul(new BN(gasPrice))
-      .div(new BN(NEAR_NOMINATION));
-    let weekAgoFee = new BN(weekAgoGas)
-      .mul(new BN(TERA_GAS_UNIT))
-      .mul(new BN(gasPrice))
-      .div(new BN(NEAR_NOMINATION));
+      let prevTotalSupply;
+      try {
+        prevTotalSupply = await new StatsApi().getTotalSupply(height);
+      } catch (e) {
+        console.log(e);
+      }
+      setTS(new BN(totalSupply).div(new BN(NEAR_NOMINATION)));
+      setTSWeekAgo(new BN(prevTotalSupply).div(new BN(NEAR_NOMINATION)));
 
-    //total deposit
-    let depositList = await new StatsApi().depositAmountAggregatedByDate();
-    let totalDeposit = depositList
-      .map((account) =>
-        new BN(account.depositAmount).div(new BN(NEAR_NOMINATION))
-      )
-      .reduce((deposit, current) => current.add(deposit), new BN(0));
-    let weekAgoDeposit = depositList
-      .slice(0, depositList.length - 7)
-      .map((account) =>
-        new BN(account.depositAmount).div(new BN(NEAR_NOMINATION))
-      )
-      .reduce((deposit, current) => current.add(deposit), new BN(0));
+      let preGdp;
+      if (prevTotalSupply) {
+        preGdp = new BN(prevTotalSupply)
+          .sub(new BN(INITIAL_SUPPLY))
+          .div(new BN(NEAR_NOMINATION));
+      }
 
-    // stake
-    let res = await nearRpc.sendJsonRpc('validators', [null]);
-    let validators = res.current_validators;
-    let stake = validators
-      .map((va) => va.stake)
-      .reduce((prev, curr) => new BN(prev).add(new BN(curr)), new BN('0'));
+      setGDP(gdp);
+      setGDPWeekAgo(preGdp);
 
-    // circulating supply
-    const circulatingSupply = await new StatsApi().getLatestCirculatingSupply();
-    setCS(circulatingSupply.circulating_supply_in_yoctonear);
+      setStaking(gdp.muln(0.95));
+      setStakeWeekAgo(preGdp.muln(0.95));
 
-    // foundations
-    const foundationAmount = await getFoundationAmount();
+      //fee
+      let fee, weekAgoFee;
+      try {
+        let { totalGas, weekAgoGas } =
+          await new StatsApi().teraGasAggregatedByDate();
+        fee = new BN(totalGas)
+          .mul(new BN(TERA_GAS_UNIT))
+          .mul(new BN(gasPrice))
+          .div(new BN(NEAR_NOMINATION));
+        weekAgoFee = new BN(weekAgoGas)
+          .mul(new BN(TERA_GAS_UNIT))
+          .mul(new BN(gasPrice))
+          .div(new BN(NEAR_NOMINATION));
+        setFee(fee);
+        setFeeWeekAgo(weekAgoFee);
+      } catch (e) {
+        console.log(e);
+      }
 
-    // settings
-    setGDP(gdp);
-    setGDPWeekAgo(preGdp);
+      //total deposit
+      let totalDeposit, weekAgoDeposit;
+      try {
+        let depositList = await new StatsApi().depositAmountAggregatedByDate();
+        if (depositList) {
+          totalDeposit = depositList
+            .map((account) =>
+              new BN(account.depositAmount).div(new BN(NEAR_NOMINATION))
+            )
+            .reduce((deposit, current) => current.add(deposit), new BN(0));
+          weekAgoDeposit = depositList
+            .slice(0, depositList.length - 7)
+            .map((account) =>
+              new BN(account.depositAmount).div(new BN(NEAR_NOMINATION))
+            )
+            .reduce((deposit, current) => current.add(deposit), new BN(0));
+          setDeposit(totalDeposit);
+          setDepositWeekAgo(weekAgoDeposit);
+        }
+      } catch (e) {
+        console.log(e);
+      }
 
-    setFee(fee);
-    setFeeWeekAgo(weekAgoFee);
+      // stake
+      let stake;
+      try {
+        let res = await nearRpc.sendJsonRpc('validators', [null]);
+        let validators = res.current_validators;
+        stake = validators
+          .map((va) => va.stake)
+          .reduce((prev, curr) => new BN(prev).add(new BN(curr)), new BN('0'));
+        setStake(stake);
+      } catch (e) {
+        console.log(e);
+      }
 
-    setStaking(gdp.muln(0.95));
-    setStakeWeekAgo(preGdp.muln(0.95));
+      let circulatingSupply, foundationAmount;
+      try {
+        // circulating supply
+        circulatingSupply = await new StatsApi().getLatestCirculatingSupply();
+        setCS(circulatingSupply.circulating_supply_in_yoctonear);
+        // foundations
+        foundationAmount = await getFoundationAmount();
 
-    setDeposit(totalDeposit);
-    setDepositWeekAgo(weekAgoDeposit);
-
-    setTS(new BN(totalSupply).div(new BN(NEAR_NOMINATION)));
-    setTSWeekAgo(new BN(prevTotalSupply).div(new BN(NEAR_NOMINATION)));
-
-    setStake(stake);
-
-    setLockup(total_lockup['2021-07-14-2']);
-    setFoundation(foundationAmount);
-    setIntersection(
-      new BN(totalSupply).sub(stake).sub(new BN(total_lockup['2021-07-14-2']))
-    );
+        setLockup(total_lockup['2021-07-15']);
+        setFoundation(foundationAmount);
+        setIntersection(
+          new BN(totalSupply).sub(stake).sub(new BN(total_lockup['2021-07-15']))
+        );
+      } catch (e) {
+        console.log(e);
+      }
+    }
   }, []);
 
   useEffect(() => Subscription(), [Subscription]);
@@ -130,6 +162,16 @@ export default () => {
     }
     getLockup();
   }, []);
+
+  const foundation_total_stake = new BN(
+    foundation_history['2021-07']['total_stake']
+  ).mul(new BN(NEAR_NOMINATION));
+  const foundation_total_lockup = new BN(
+    foundation_history['2021-07']['total_locked']
+  ).mul(new BN(NEAR_NOMINATION));
+  const foundation_total_circulating = new BN(
+    foundation_history['2021-07']['total_circulating']
+  ).mul(new BN(NEAR_NOMINATION));
 
   return (
     <div style={{ textAlign: 'left' }}>
@@ -151,9 +193,19 @@ export default () => {
         {circulatingSupply === '' ? (
           <span>Loading...</span>
         ) : (
-          <strong className="green">
-            {formatNearAmount(circulatingSupply, 0)} Ⓝ
-          </strong>
+          <span>
+            <strong className="green">
+              {formatNearAmount(circulatingSupply, 0)} Ⓝ
+            </strong>
+            without foundation :{' '}
+            {formatNearAmount(
+              new BN(circulatingSupply)
+                .sub(foundation_total_circulating)
+                .toString(),
+              0
+            )}{' '}
+            Ⓝ
+          </span>
         )}
       </div>
       <div>
@@ -161,9 +213,14 @@ export default () => {
         {stake === '' ? (
           <span>Loading...</span>
         ) : (
-          <strong className="green">
-            {formatNearAmount(stake.toString(), 0)} Ⓝ
-          </strong>
+          <span>
+            <strong className="green">
+              {formatNearAmount(stake.toString(), 0)} Ⓝ{' '}
+            </strong>
+            without foundation :{' '}
+            {formatNearAmount(stake.sub(foundation_total_stake).toString(), 0)}{' '}
+            Ⓝ
+          </span>
         )}
       </div>
       <div>
@@ -172,7 +229,15 @@ export default () => {
         {lockup === '' ? (
           <span>Loading...</span>
         ) : (
-          <strong className="green">{formatNearAmount(lockup, 0)} Ⓝ</strong>
+          <span>
+            <strong className="green">{formatNearAmount(lockup, 0)} Ⓝ</strong>
+            without foundation :{' '}
+            {formatNearAmount(
+              new BN(lockup).sub(foundation_total_lockup).toString(),
+              0
+            )}{' '}
+            Ⓝ
+          </span>
         )}
       </div>
       <div>
@@ -189,9 +254,23 @@ export default () => {
         {intersection === '' ? (
           <span>Loading...</span>
         ) : (
-          <strong className="green">
-            {formatNearAmount(intersection.toString(), 0)} Ⓝ
-          </strong>
+          <span>
+            <strong className="green">
+              {formatNearAmount(intersection.toString(), 0)} Ⓝ
+            </strong>
+            <span>
+              without foundation :{' '}
+              {formatNearAmount(
+                intersection
+                  .add(foundation_total_stake)
+                  .add(foundation_total_lockup)
+                  .sub(new BN(foundation))
+                  .toString(),
+                0
+              )}{' '}
+              Ⓝ
+            </span>
+          </span>
         )}
       </div>
       <div>
