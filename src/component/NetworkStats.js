@@ -258,7 +258,7 @@ export default () => {
             <strong className="green">
               {formatNearAmount(intersection.toString(), 0)} Ⓝ
             </strong>
-            <span>
+            {/* <span>
               without foundation :{' '}
               {formatNearAmount(
                 intersection
@@ -269,7 +269,7 @@ export default () => {
                 0
               )}{' '}
               Ⓝ
-            </span>
+            </span> */}
           </span>
         )}
       </div>
