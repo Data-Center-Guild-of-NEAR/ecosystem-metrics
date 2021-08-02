@@ -12,13 +12,15 @@ import Partner from './component/Partner';
 import DepositAmount from './component/DepositAmount';
 import TransactionsAmount from './component/TransactionsAmount';
 import NewAccounts from './component/NewAccounts';
+import FirstDappTotalCount from './component/FirstDappTotalCount';
+import FirstDappDailyTotal from './component/FirstDappDailyTotal';
 
 import './app.css';
 
 export default () => {
   return (
     <Container>
-      <h1 style={{ fontWeight: '900' }}>Ecosystem Metrics</h1>
+      <h1 style={{ fontWeight: '900' }}>Ecosystem Leaderboard</h1>
       <Container>
         <Row noGutters className="pl-10 pr-3">
           <Col>
@@ -32,6 +34,10 @@ export default () => {
           <NetworkStats />
         </Row>
 
+        <hr />
+        <FirstDappTotalCount />
+        <hr />
+        <FirstDappDailyTotal />
         <hr />
         <MonthlyActiveDevCount />
         <hr />
