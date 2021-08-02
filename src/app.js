@@ -22,35 +22,29 @@ export default () => {
     <Container>
       <h1 style={{ fontWeight: '900' }}>Ecosystem Leaderboard</h1>
       <Container>
-        <Row noGutters className="pl-10 pr-3">
-          <Col>
-            <ActiveValidators />
-          </Col>
-          <Col>
-            <Partner />
-          </Col>
-        </Row>
-        <Row noGutters>
+        <Row noGutters className="pl-10 pr-3 ml-3 mb-3">
           <NetworkStats />
         </Row>
-
-        <hr />
-        <FirstDappTotalCount />
-        <hr />
-        <FirstDappDailyTotal />
-        <hr />
-        <MonthlyActiveDevCount />
-        <hr />
-        <GithubStats />
-        <hr />
-        <ActiveAccounts />
-        <hr />
-        <NewAccounts />
-        <hr />
-        <DepositAmount />
-        <hr />
-        <TransactionsAmount />
+        <Row noGutters className="pl-10 pr-3 ml-3">
+          <ActiveValidators />
+        </Row>
       </Container>
+      <hr />
+      <FirstDappTotalCount />
+      <hr />
+      <FirstDappDailyTotal />
+      <hr />
+      <MonthlyActiveDevCount />
+      <hr />
+      <GithubStats />
+      <hr />
+      <ActiveAccounts />
+      <hr />
+      <NewAccounts />
+      <hr />
+      <DepositAmount />
+      <hr />
+      <TransactionsAmount />
     </Container>
   );
 };

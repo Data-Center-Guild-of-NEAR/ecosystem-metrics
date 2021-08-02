@@ -175,7 +175,9 @@ export default () => {
 
   return (
     <div style={{ textAlign: 'left' }}>
-      <h4>Network Situation</h4>
+      <h4>
+        <strong>Network Situation</strong>
+      </h4>
       <div>
         <strong>Total supply </strong> <Tooltip text={term.total_supply} /> :{' '}
         {totalSupply === '' ? (
@@ -243,7 +245,7 @@ export default () => {
       <div>
         <strong>Foundation Fund </strong> <Tooltip text={term.foundation} /> :{' '}
         {foundation === '' ? (
-          <p>Loading...</p>
+          <span>Loading...</span>
         ) : (
           <strong className="green">{formatNearAmount(foundation, 0)} Ⓝ</strong>
         )}
