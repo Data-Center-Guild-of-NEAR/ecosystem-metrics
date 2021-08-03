@@ -1,31 +1,9 @@
-# NEAR ECOSYSTEM METRICS
-This project is dashboard for ecosystem metrics which including users, decentralization and usage part. welcome to have a look and leave comments in the issue or make contributions from PR.
+# NEAR ECOSYSTEM LEADERBOARD
+The board is showing here (https://ecosystem-metrics.onrender.com)[https://ecosystem-metrics.onrender.com/]
+
+This project is dashboard for ecosystem metrics which including token category and value, active developer count, transactions and usage situation part. Welcome to have a look and leave comments in the issue or make contributions from PR.
 
 ### Notice 
 All term explanations are in src/utils/term.js file.
 
-###### Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-##### Available Scripts
-
-In the project directory, you can run:
-
-##### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-##### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Data is stored in src/history folder.

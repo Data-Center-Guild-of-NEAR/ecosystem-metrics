@@ -23,7 +23,7 @@ export default () => {
   return (
     <div style={{ textAlign: 'left' }}>
       <h4>
-        <strong>Stake Situation</strong>
+        <strong>Staking pool</strong>
       </h4>
       <div>
         Current Validators <Tooltip text={term.current_validators} /> :{' '}

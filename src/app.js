@@ -8,12 +8,13 @@ import ActiveAccounts from './component/ActiveAccounts';
 import ActiveValidators from './component/ActiveValidators';
 import NetworkStats from './component/NetworkStats';
 import GithubStats from './component/GithubStats';
-import Partner from './component/Partner';
+import Community from './component/Community';
 import DepositAmount from './component/DepositAmount';
 import TransactionsAmount from './component/TransactionsAmount';
 import NewAccounts from './component/NewAccounts';
 import FirstDappTotalCount from './component/FirstDappTotalCount';
 import FirstDappDailyTotal from './component/FirstDappDailyTotal';
+import Guilds from './component/Guilds';
 
 import './app.css';
 
@@ -26,25 +27,34 @@ export default () => {
           <NetworkStats />
         </Row>
         <Row noGutters className="pl-10 pr-3 ml-3">
-          <ActiveValidators />
+          <Col md="4" xs="12">
+            <ActiveValidators />
+          </Col>
+          <Col>
+            <Guilds />
+          </Col>
+          <Col>
+            <Community />
+          </Col>
         </Row>
+
+        <hr />
+        <FirstDappTotalCount />
+        <hr />
+        <FirstDappDailyTotal />
+        <hr />
+        <MonthlyActiveDevCount />
+        <hr />
+        <GithubStats />
+        <hr />
+        <ActiveAccounts />
+        <hr />
+        <NewAccounts />
+        <hr />
+        <DepositAmount />
+        <hr />
+        <TransactionsAmount />
       </Container>
-      <hr />
-      <FirstDappTotalCount />
-      <hr />
-      <FirstDappDailyTotal />
-      <hr />
-      <MonthlyActiveDevCount />
-      <hr />
-      <GithubStats />
-      <hr />
-      <ActiveAccounts />
-      <hr />
-      <NewAccounts />
-      <hr />
-      <DepositAmount />
-      <hr />
-      <TransactionsAmount />
     </Container>
   );
 };
