@@ -47,7 +47,7 @@ const dappCount = () => {
   return (
     <>
       <h2>Total First Dapp Count</h2>
-      <p>collected until 2021-07-30</p>
+      <p>collected until 2021-08-10</p>
       <ReactEcharts
         option={getOption()}
         style={{

@@ -78,7 +78,7 @@ const DailyTotalCountFristDapp = () => {
   return (
     <>
       <h2>Daily Total First Time Dapp granted By User</h2>
-      <p>collected until 2021-07-30</p>
+      <p>collected until 2021-08-10</p>
       <ReactEcharts option={getOption(date, count)} style={chartStyle} />
     </>
   );

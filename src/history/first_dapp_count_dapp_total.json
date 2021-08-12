@@ -1,195 +1,195 @@
 [
   {
     "name": "contract.paras.near",
-    "count": 4896
+    "count": 9877
   },
   {
     "name": "null_address.near",
-    "count": 8549
+    "count": 17144
   },
   {
     "name": "berryclub.ek.near",
-    "count": 2519
+    "count": 5032
   },
   {
     "name": "bananaswap.near",
-    "count": 88
+    "count": 183
   },
   {
     "name": "ref-finance.near",
-    "count": 12725
+    "count": 25446
   },
   {
     "name": "sputnik-dao.near",
-    "count": 723
+    "count": 1555
   },
   {
     "name": "uhhmnft.near",
-    "count": 166
+    "count": 340
   },
   {
     "name": "app.nearcrowd.near",
-    "count": 3632
+    "count": 7454
   },
   {
     "name": "client.bridge.near",
-    "count": 100
+    "count": 220
   },
   {
     "name": "mintbase1.near",
-    "count": 1421
+    "count": 2958
   },
   {
     "name": "skyward.near",
-    "count": 3565
+    "count": 7468
   },
   {
     "name": "galaxybank.near",
-    "count": 833
+    "count": 1690
   },
   {
     "name": "learnclub.near",
-    "count": 1631
+    "count": 3308
   },
   {
     "name": "lands.near",
-    "count": 23
+    "count": 48
   },
   {
     "name": "tkn.near",
-    "count": 89
+    "count": 174
   },
   {
     "name": "pixelbattle.near",
-    "count": 21
+    "count": 44
   },
   {
     "name": "corgis3d.yifang.near",
-    "count": 29
+    "count": 66
   },
   {
     "name": "sputnikdao.near",
-    "count": 554
+    "count": 1146
   },
   {
     "name": "retroneon.near",
-    "count": 13
+    "count": 24
   },
   {
     "name": "pixelparty.near",
-    "count": 210
+    "count": 422
   },
   {
     "name": "pluminite.near",
-    "count": 86
+    "count": 172
   },
   {
     "name": "auth.name.near",
-    "count": 4
+    "count": 7
   },
   {
     "name": "farm.berryclub.ek.near",
-    "count": 217
+    "count": 445
   },
   {
     "name": "tipbot.app.near",
-    "count": 194
+    "count": 408
   },
   {
     "name": "mtvrs-app.near",
-    "count": 69
+    "count": 136
   },
   {
     "name": "pixeltoken.near",
-    "count": 1895
+    "count": 3790
   },
   {
     "name": "claim-tokens.near",
-    "count": 2953
+    "count": 5874
   },
   {
     "name": "c.nearbet.near",
-    "count": 279
+    "count": 564
   },
   {
     "name": "cards.berryclub.ek.near",
-    "count": 99
+    "count": 194
   },
   {
     "name": "zodtv.near",
-    "count": 17
+    "count": 34
   },
   {
     "name": "psalomo.near",
-    "count": 27
+    "count": 59
   },
   {
     "name": "p2p-org.poolv1.near",
-    "count": 3
-  },
-  {
-    "name": "factory.bridge.near",
-    "count": 27
-  },
-  {
-    "name": "0351f547483592765109361c3ed0d8ffa0dcabf8.lockup.near",
-    "count": 1
-  },
-  {
-    "name": "4b9e44854e297b89e391d4faf5a4a6caefbd3dfd.lockup.near",
-    "count": 1
-  },
-  {
-    "name": "42a2a118ca0f2dee7a01073cc03b724a035dbd22.lockup.near",
-    "count": 1
-  },
-  {
-    "name": "42ed47fa46a6cf8bea7401477b06527837168f2c.lockup.near",
-    "count": 1
-  },
-  {
-    "name": "37dbe6947eab0d0eeabadba000f14f85011bf221.lockup.near",
-    "count": 1
-  },
-  {
-    "name": "897e2d25a83ffbee1097a0c323b65c81300ea9a2.lockup.near",
-    "count": 1
-  },
-  {
-    "name": "1f2356b557ecc4cd001eaa64a1f926e18435bcbe.lockup.near",
-    "count": 1
-  },
-  {
-    "name": "b5fb15b8a20305aab003ab701ecc2da5b6993c50.lockup.near",
-    "count": 1
-  },
-  {
-    "name": "ref-farming.near",
-    "count": 488
-  },
-  {
-    "name": "biudrop.near",
     "count": 6
   },
   {
-    "name": "nft2.vkkliq.near",
-    "count": 4
+    "name": "factory.bridge.near",
+    "count": 51
   },
   {
-    "name": "wasmgit.near",
-    "count": 1
-  },
-  {
-    "name": "rtc.near",
-    "count": 97
-  },
-  {
-    "name": "buildlinks.poolv1.near",
+    "name": "0351f547483592765109361c3ed0d8ffa0dcabf8.lockup.near",
     "count": 2
   },
   {
+    "name": "4b9e44854e297b89e391d4faf5a4a6caefbd3dfd.lockup.near",
+    "count": 2
+  },
+  {
+    "name": "42a2a118ca0f2dee7a01073cc03b724a035dbd22.lockup.near",
+    "count": 2
+  },
+  {
+    "name": "42ed47fa46a6cf8bea7401477b06527837168f2c.lockup.near",
+    "count": 3
+  },
+  {
+    "name": "37dbe6947eab0d0eeabadba000f14f85011bf221.lockup.near",
+    "count": 2
+  },
+  {
+    "name": "897e2d25a83ffbee1097a0c323b65c81300ea9a2.lockup.near",
+    "count": 2
+  },
+  {
+    "name": "1f2356b557ecc4cd001eaa64a1f926e18435bcbe.lockup.near",
+    "count": 2
+  },
+  {
+    "name": "b5fb15b8a20305aab003ab701ecc2da5b6993c50.lockup.near",
+    "count": 2
+  },
+  {
+    "name": "ref-farming.near",
+    "count": 2223
+  },
+  {
+    "name": "biudrop.near",
+    "count": 11
+  },
+  {
+    "name": "nft2.vkkliq.near",
+    "count": 9
+  },
+  {
+    "name": "wasmgit.near",
+    "count": 2
+  },
+  {
+    "name": "rtc.near",
+    "count": 202
+  },
+  {
+    "name": "buildlinks.poolv1.near",
+    "count": 6
+  },
+  {
     "name": "efaa553591d2de88502302026ba48f0a4217086f.lockup.near",
-    "count": 1
+    "count": 3
   },
   {
     "name": "6a2db0519c7b327c3c034796accb8923e29ad033.lockup.near",
@@ -197,31 +197,31 @@
   },
   {
     "name": "70234c33fc9588d64946e57a0b99497d231044a1.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "acc34142398458e7a30d692b31a130aa1964495a.lockup.near",
-    "count": 1
-  },
-  {
-    "name": "27cc73fa19dfeb92408f92ab0d277861e990ffd6.lockup.near",
-    "count": 1
-  },
-  {
-    "name": "cca00cccf63e7fabd3bd7ab4ca13726729b4ec5f.lockup.near",
-    "count": 1
-  },
-  {
-    "name": "openshards.poolv1.near",
     "count": 3
   },
   {
+    "name": "27cc73fa19dfeb92408f92ab0d277861e990ffd6.lockup.near",
+    "count": 2
+  },
+  {
+    "name": "cca00cccf63e7fabd3bd7ab4ca13726729b4ec5f.lockup.near",
+    "count": 2
+  },
+  {
+    "name": "openshards.poolv1.near",
+    "count": 8
+  },
+  {
     "name": "astro-stakers.poolv1.near",
-    "count": 10
+    "count": 20
   },
   {
     "name": "d1.poolv1.near",
-    "count": 8
+    "count": 15
   },
   {
     "name": "sharpdarts.poolv1.near",
@@ -237,39 +237,39 @@
   },
   {
     "name": "redbag.near",
-    "count": 15
+    "count": 30
   },
   {
     "name": "staked.poolv1.near",
-    "count": 4
+    "count": 7
   },
   {
     "name": "commonfund.near",
-    "count": 10
+    "count": 23
   },
   {
     "name": "meme.app.near",
-    "count": 17
+    "count": 35
   },
   {
     "name": "zavodil.poolv1.near",
-    "count": 6
+    "count": 17
   },
   {
     "name": "stardust.poolv1.near",
-    "count": 2
+    "count": 3
   },
   {
     "name": "stakesabai.poolv1.near",
-    "count": 4
+    "count": 9
   },
   {
     "name": "multisender.app.near",
-    "count": 8
+    "count": 16
   },
   {
     "name": "dokiacapital.poolv1.near",
-    "count": 7
+    "count": 13
   },
   {
     "name": "bfd4d5396b0382db0e0e402784a5cc724b797caf.lockup.near",
@@ -281,39 +281,39 @@
   },
   {
     "name": "6d0746fec69e53be0c3d7dee79b0f22a298caa63.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "09b5dac8e5f79f0db7811c6063fc129f9d085571.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "6346e5255c5ef3e421fc4911744a6744bfedd408.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "9db85ebe8e3630572cd115bcc3a5824f6e999303.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "6c905a690f68184d69d2e6d2483f6bfcd6344157.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "c9453763fe722d4fe4856c89ee46762586bf50a6.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "masternode24.poolv1.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "01node.poolv1.near",
-    "count": 2
+    "count": 4
   },
   {
     "name": "nearfans.poolv1.near",
-    "count": 2
+    "count": 5
   },
   {
     "name": "9e00cef5512cb256bb3e21f3b4688cc224eb72ac.lockup.near",
@@ -321,11 +321,11 @@
   },
   {
     "name": "f56c94a7403d695e884e637ec8b21f083001f8ae.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "7bb9924c729249c69a736b6b57a0686580dbd619.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "24a2d2b05ede7962e760e515d895cdde71ca8733.lockup.near",
@@ -333,7 +333,7 @@
   },
   {
     "name": "5fbb97350816d15f29ce0bdbc0f8da4cb0c59801.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "ad1b5199e1a6dc7e09446c6c696d47ec3135ef9f.lockup.near",
@@ -341,15 +341,15 @@
   },
   {
     "name": "fresh.poolv1.near",
-    "count": 2
+    "count": 3
   },
   {
     "name": "rekt.poolv1.near",
-    "count": 2
+    "count": 3
   },
   {
     "name": "anonymous.poolv1.near",
-    "count": 2
+    "count": 3
   },
   {
     "name": "epic.poolv1.near",
@@ -357,7 +357,7 @@
   },
   {
     "name": "chorusone.poolv1.near",
-    "count": 1
+    "count": 4
   },
   {
     "name": "ref.near",
@@ -373,11 +373,11 @@
   },
   {
     "name": "686ed0d8d0a33deadcba81420364e2ee3dd7d8a0.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "98e24e93611a699a4bb822cb4fe1ca3c76b954ee.lockup.near",
-    "count": 1
+    "count": 3
   },
   {
     "name": "6374294a269081c9db8374b276e3c0046175d64f.lockup.near",
@@ -385,11 +385,11 @@
   },
   {
     "name": "1c0897f0f892fb21b389cb195d74768ea9817966.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "88ba58f1b9cb8fe2bb11e5e7a9d05c3c1f409fef.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "a1ea7e08c78ebe16a87c12bbd130513567fd8310.lockup.near",
@@ -397,15 +397,15 @@
   },
   {
     "name": "props.near",
-    "count": 3
+    "count": 5
   },
   {
     "name": "bisontrails.poolv1.near",
-    "count": 4
+    "count": 6
   },
   {
     "name": "f85472f50bc9d1885c3e3c23c1cba9e4cdcfdda7.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "20f23e11d64a1d3551d9746e9d69f18a0f0fdb5d.lockup.near",
@@ -417,19 +417,19 @@
   },
   {
     "name": "f5bc8d7c27161c33da0507e35b26b58d6bdf0592.lockup.near",
-    "count": 1
-  },
-  {
-    "name": "huobipool.poolv1.near",
     "count": 2
   },
   {
+    "name": "huobipool.poolv1.near",
+    "count": 4
+  },
+  {
     "name": "dsrvlabs.poolv1.near",
-    "count": 3
+    "count": 4
   },
   {
     "name": "biudrops.near",
-    "count": 3
+    "count": 5
   },
   {
     "name": "stakin.poolv1.near",
@@ -437,23 +437,23 @@
   },
   {
     "name": "everstake.poolv1.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "nc2.poolv1.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "avrit.near",
-    "count": 3
+    "count": 9
   },
   {
     "name": "itselaine.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "247c229cc61cdf8ddd3655905996b13d3912623f.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "5272788a3ae350b67a8daac582525786de254f6a.lockup.near",
@@ -465,27 +465,27 @@
   },
   {
     "name": "c95266f6dfb802cd2ce69c523e9fe7ccbcda57be.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "af20aa7ac6505b3b9f6712c50681180f0d47156f.lockup.near",
-    "count": 1
+    "count": 3
   },
   {
     "name": "46c7412f6e3a809db483668e92bc65ea5b308cde.lockup.near",
-    "count": 1
+    "count": 3
   },
   {
     "name": "45cbae12de80d84ab577f3125df3e07810517e7d.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "1efe3a14a0e268d3223ed5de4093116e98dc5f8c.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "bbeedc1e65402c27a71349f1970eb0f282f57b0c.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "f0e66bb4f50ccd1233294bf169914dd30addfea7.lockup.near",
@@ -497,15 +497,15 @@
   },
   {
     "name": "lightform-api.jiyoun.near",
-    "count": 1
+    "count": 3
   },
   {
     "name": "prot_test.flux_dev.near",
-    "count": 4
+    "count": 8
   },
   {
     "name": "place.app.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "c358f0b4a9bee631853a1c3bbef7e7e95b814865.lockup.near",
@@ -513,15 +513,15 @@
   },
   {
     "name": "oparcade-alpha.opgames.testnet",
-    "count": 1
+    "count": 3
   },
   {
     "name": "abl_pool.poolv1.near",
-    "count": 1
+    "count": 3
   },
   {
     "name": "fish.poolv1.near",
-    "count": 1
+    "count": 4
   },
   {
     "name": "8282ba6d75a7474f793170bf731bbf94d91b7e99.lockup.near",
@@ -533,51 +533,51 @@
   },
   {
     "name": "71d590285ae70a5f3208873ac7736e06e8b142b3.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "ddd1c08c2d3983d7a6ee00a528209a0a0fd15d44.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "4c77a407110918d4a707e186455d80f875a4d12a.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "5a9054633a63aa9f3998ec4db695e6a03d604476.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "eb95466d9b2c822072ba7f5c5f9cc3be0237ec38.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "b84ce21fb9cbe6345fd51449090e248232b09f33.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "a51d148d6d92a51d5e66995736a66c5725b4fbec.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "b445b7642f921a2082eeafde10f8247d84979e2d.lockup.near",
-    "count": 1
+    "count": 3
   },
   {
     "name": "bae318faabbf8c78934899378e82cbb6efd3165b.lockup.near",
-    "count": 1
+    "count": 3
   },
   {
     "name": "f6ec4c0f20da63ab4ad2b36120e7beedcb345514.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "30dd85acc038b8dbfd98c6b4612ece9fb3fe682a.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "baziliknear.poolv1.near",
-    "count": 3
+    "count": 5
   },
   {
     "name": "northernlights.poolv1.near",
@@ -585,11 +585,11 @@
   },
   {
     "name": "okexpool.poolv1.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "cryptium.poolv1.near",
-    "count": 1
+    "count": 5
   },
   {
     "name": "670d048290d03021a0bbd2b46698dbc985fc37de.lockup.near",
@@ -601,7 +601,7 @@
   },
   {
     "name": "5f20992303cd3c2877d436a0f1037cc1a0fb5952.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "b27cb284ed49a9628a1aee7ba2c9b52bca87c71e.lockup.near",
@@ -609,23 +609,23 @@
   },
   {
     "name": "02aa3053ca829dd470075b17427159383144ff88.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "d1f950ee08f1e353ed88c955e30913ba969a0730.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "100600069ac99126ab0f3f44789f6fb08be753e4.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "ea44778242069f1233faecab93aa83edf93ee217.lockup.near",
-    "count": 1
+    "count": 3
   },
   {
     "name": "dialecticstake.poolv1.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "audit_one.poolv1.near",
@@ -637,7 +637,7 @@
   },
   {
     "name": "26426ac5e955edacc963912daac849dcf197565e.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "f502bd4a08fcc021a03029e304af1b029b4b2fc3.lockup.near",
@@ -645,11 +645,11 @@
   },
   {
     "name": "1c75a98dba0ea8d9d75f61830eebedbbe5b5240a.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "75e8a6d805e7bbf66509b3e19d989a0ac3ccaa5f.lockup.near",
-    "count": 1
+    "count": 3
   },
   {
     "name": "e3d60310fa529ea07201049acad5adb54ccd5932.lockup.near",
@@ -657,19 +657,19 @@
   },
   {
     "name": "4b30bb7c1d4f4ec27b11646620965d0fdc3f66c5.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "e9ab3c4ffab61b99faa93ab0cefa2f80bc07f25d.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "a133de191f8561d5b5fd06fd4b4f8449dca9ce3e.lockup.near",
-    "count": 1
+    "count": 3
   },
   {
     "name": "bb22c6757722225db755cc1a64bc39de8aa41fe2.lockup.near",
-    "count": 1
+    "count": 3
   },
   {
     "name": "nodeasy.poolv1.near",
@@ -677,15 +677,15 @@
   },
   {
     "name": "5d3bd33cdad10882eead7a330aadbbc581d1e369.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "c8b4658c025487d0094ab7d9c270e506c59d7221.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "e5d6f92a1782d5faa25b5a5723c96bb50c28d94b.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "thepassivetrust.poolv1.near",
@@ -693,11 +693,11 @@
   },
   {
     "name": "751427ad29759b9b6360dfc84485f4df44f62a01.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "3be930466d26913d4e501645cd87104d4ff04f18.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "20789c03bd725118de322040ad5e5c6152ba93f6.lockup.near",
@@ -709,7 +709,7 @@
   },
   {
     "name": "71ea554e44b99bf93a8a5814e02a8d9ff6d3f25f.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "6bc4a6970772ab993e488956f9d76dfc8d5bc564.lockup.near",
@@ -717,26 +717,26 @@
   },
   {
     "name": "97cbd981421220b3c11bfca83de8218cea6e1338.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "e7dacccbb62042c295886e210bd15d3ba08e5344.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "48c1768c2de3f55c832846dba72128c2ae8f86eb.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "7c8d47d460c589c2871ae3d9fc81c562407607d0.lockup.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "be188e5acea71e922632e22573bc95a6fab1dc20.lockup.near",
-    "count": 1
+    "count": 3
   },
   {
     "name": "ref-playground.near",
-    "count": 1
+    "count": 2
   }
 ]
