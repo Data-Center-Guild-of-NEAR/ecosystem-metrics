@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactEcharts from 'echarts-for-react';
 
-import firstDappDailyTotal from '../history/first_dapp_count_daily_total.json';
+import firstDappDailyTotal from '../history/first_dapp_count_daily_total_8_16.json';
 
 const DailyTotalCountFristDapp = () => {
   const chartStyle = {
@@ -78,7 +78,7 @@ const DailyTotalCountFristDapp = () => {
   return (
     <>
       <h2>Daily Total First Time Dapp granted By User</h2>
-      <p>collected until 2021-08-10</p>
+      <p>collected until 2021-08-16</p>
       <ReactEcharts option={getOption(date, count)} style={chartStyle} />
     </>
   );
