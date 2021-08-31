@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactEcharts from 'echarts-for-react';
 
-import firstDappTotal from '../history/first_dapp_count_dapp_total_8_23.json';
+import firstDappTotal from '../history/first_dapp_count_dapp_total_8_30.json';
 
 const dappCount = () => {
   let total = firstDappTotal.sort((v1, v2) => {
@@ -47,7 +47,7 @@ const dappCount = () => {
   return (
     <>
       <h2>Total First Dapp Count</h2>
-      <p>collected until 2021-08-23</p>
+      <p>collected until 2021-08-30</p>
       <ReactEcharts
         option={getOption()}
         style={{

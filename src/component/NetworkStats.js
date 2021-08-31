@@ -141,10 +141,10 @@ export default () => {
         // foundations
         foundationAmount = await getFoundationAmount();
 
-        setLockup(total_lockup['2021-07-15']);
+        setLockup(total_lockup['2021-08-30']);
         setFoundation(foundationAmount);
         setIntersection(
-          new BN(totalSupply).sub(stake).sub(new BN(total_lockup['2021-07-15']))
+          new BN(totalSupply).sub(stake).sub(new BN(total_lockup['2021-08-30']))
         );
       } catch (e) {
         console.log(e);
@@ -238,7 +238,7 @@ export default () => {
               new BN(lockup).sub(foundation_total_lockup).toString(),
               0
             )}{' '}
-            Ⓝ
+            Ⓝ<p>{lockup}</p>
           </span>
         )}
       </div>
@@ -259,6 +259,7 @@ export default () => {
           <span>
             <strong className="green">
               {formatNearAmount(intersection.toString(), 0)} Ⓝ
+              <p>{intersection.toString()}</p>
             </strong>
             {/* <span>
               without foundation :{' '}
