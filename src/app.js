@@ -48,12 +48,12 @@ export default () => {
         <GithubStats />
         <hr />
         <ActiveAccounts />
-        <hr />
+        {/* <hr />
         <NewAccounts />
         <hr />
         <DepositAmount />
         <hr />
-        <TransactionsAmount />
+        <TransactionsAmount /> */}
       </Container>
     </Container>
   );
