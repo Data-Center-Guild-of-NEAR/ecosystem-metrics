@@ -49,10 +49,10 @@ export default () => {
         <hr />
         <ActiveAccounts />
         {/* <hr />
-        <NewAccounts />
+        <NewAccounts /> */}
         <hr />
         <DepositAmount />
-        <hr />
+        {/* <hr />
         <TransactionsAmount /> */}
       </Container>
     </Container>
