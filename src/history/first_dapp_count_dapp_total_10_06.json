@@ -1,0 +1,862 @@
+[
+  {
+    "name": "null_address.near",
+    "count": 9072
+  },
+  {
+    "name": "app.nearcrowd.near",
+    "count": 5311
+  },
+  {
+    "name": "contract.paras.near",
+    "count": 5843
+  },
+  {
+    "name": "berryclub.ek.near",
+    "count": 2741
+  },
+  {
+    "name": "tipbot.app.near",
+    "count": 331
+  },
+  {
+    "name": "psalomo.near",
+    "count": 46
+  },
+  {
+    "name": "cards.berryclub.ek.near",
+    "count": 117
+  },
+  {
+    "name": "c.nearbet.near",
+    "count": 345
+  },
+  {
+    "name": "chorusone.poolv1.near",
+    "count": 2
+  },
+  {
+    "name": "skyward.near",
+    "count": 25588
+  },
+  {
+    "name": "mintbase1.near",
+    "count": 3080
+  },
+  {
+    "name": "sputnik-dao.near",
+    "count": 903
+  },
+  {
+    "name": "ref-farming.near",
+    "count": 3942
+  },
+  {
+    "name": "galaxybank.near",
+    "count": 978
+  },
+  {
+    "name": "bananaswap.near",
+    "count": 91
+  },
+  {
+    "name": "sputnikdao.near",
+    "count": 818
+  },
+  {
+    "name": "learnclub.near",
+    "count": 4782
+  },
+  {
+    "name": "marketplace.paras.near",
+    "count": 4999
+  },
+  {
+    "name": "v2.ref-farming.near",
+    "count": 13340
+  },
+  {
+    "name": "mtvrs-app.near",
+    "count": 291
+  },
+  {
+    "name": "meta-pool.near",
+    "count": 1597
+  },
+  {
+    "name": "pixeltoken.near",
+    "count": 2561
+  },
+  {
+    "name": "ref-finance.near",
+    "count": 12733
+  },
+  {
+    "name": "client.bridge.near",
+    "count": 124
+  },
+  {
+    "name": "pluminite.near",
+    "count": 120
+  },
+  {
+    "name": "avrit.near",
+    "count": 9
+  },
+  {
+    "name": "multisender.app.near",
+    "count": 14
+  },
+  {
+    "name": "claim-tokens.near",
+    "count": 1957
+  },
+  {
+    "name": "corgis3d.yifang.near",
+    "count": 56
+  },
+  {
+    "name": "dotz.near",
+    "count": 6361
+  },
+  {
+    "name": "lockup.near",
+    "count": 3
+  },
+  {
+    "name": "near-punks.near",
+    "count": 93
+  },
+  {
+    "name": "farm.berryclub.ek.near",
+    "count": 251
+  },
+  {
+    "name": "p1-farm.cheddar.near",
+    "count": 307
+  },
+  {
+    "name": "lands.near",
+    "count": 102
+  },
+  {
+    "name": "pixelparty.near",
+    "count": 270
+  },
+  {
+    "name": "tkn.near",
+    "count": 117
+  },
+  {
+    "name": "uhhmnft.near",
+    "count": 209
+  },
+  {
+    "name": "unv.near",
+    "count": 53
+  },
+  {
+    "name": "abl_pool.poolv1.near",
+    "count": 3
+  },
+  {
+    "name": "broseph.near",
+    "count": 1
+  },
+  {
+    "name": "rekt.poolv1.near",
+    "count": 3
+  },
+  {
+    "name": "rtc.near",
+    "count": 95
+  },
+  {
+    "name": "token.paras.near",
+    "count": 23
+  },
+  {
+    "name": "near8888.poolv1.near",
+    "count": 2
+  },
+  {
+    "name": "erm.poolv1.near",
+    "count": 1
+  },
+  {
+    "name": "hype.tkn.near",
+    "count": 8
+  },
+  {
+    "name": "web3bio.near",
+    "count": 8
+  },
+  {
+    "name": "f502bd4a08fcc021a03029e304af1b029b4b2fc3.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "c9453763fe722d4fe4856c89ee46762586bf50a6.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "1c75a98dba0ea8d9d75f61830eebedbbe5b5240a.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "e9ab3c4ffab61b99faa93ab0cefa2f80bc07f25d.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "6c905a690f68184d69d2e6d2483f6bfcd6344157.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "20789c03bd725118de322040ad5e5c6152ba93f6.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "6346e5255c5ef3e421fc4911744a6744bfedd408.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "meme.app.near",
+    "count": 15
+  },
+  {
+    "name": "pixelbattle.near",
+    "count": 19
+  },
+  {
+    "name": "retroneon.near",
+    "count": 13
+  },
+  {
+    "name": "trailitadmin.near",
+    "count": 3
+  },
+  {
+    "name": "auth.name.near",
+    "count": 5
+  },
+  {
+    "name": "zodtv.near",
+    "count": 18
+  },
+  {
+    "name": "biudrop.near",
+    "count": 7
+  },
+  {
+    "name": "commonfund.near",
+    "count": 10
+  },
+  {
+    "name": "openshards.poolv1.near",
+    "count": 6
+  },
+  {
+    "name": "redbag.near",
+    "count": 12
+  },
+  {
+    "name": "factory.bridge.near",
+    "count": 27
+  },
+  {
+    "name": "eb95466d9b2c822072ba7f5c5f9cc3be0237ec38.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "6a2db0519c7b327c3c034796accb8923e29ad033.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "27cc73fa19dfeb92408f92ab0d277861e990ffd6.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "be188e5acea71e922632e22573bc95a6fab1dc20.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "97cbd981421220b3c11bfca83de8218cea6e1338.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "9a9727d6817335ad195e8927687f4810efb5743e.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "dsrvlabs.poolv1.near",
+    "count": 3
+  },
+  {
+    "name": "fish.poolv1.near",
+    "count": 1
+  },
+  {
+    "name": "props.near",
+    "count": 4
+  },
+  {
+    "name": "buildlinks.poolv1.near",
+    "count": 6
+  },
+  {
+    "name": "dokiacapital.poolv1.near",
+    "count": 3
+  },
+  {
+    "name": "farming.ref-dev-team.near",
+    "count": 1
+  },
+  {
+    "name": "requestnetwork.near",
+    "count": 3
+  },
+  {
+    "name": "quizchain.near",
+    "count": 4
+  },
+  {
+    "name": "orderly.near",
+    "count": 2
+  },
+  {
+    "name": "crust.near",
+    "count": 7
+  },
+  {
+    "name": "bisontrails.poolv1.near",
+    "count": 2
+  },
+  {
+    "name": "commonwealth-login.near",
+    "count": 8
+  },
+  {
+    "name": "01node.poolv1.near",
+    "count": 2
+  },
+  {
+    "name": "anonymous.poolv1.near",
+    "count": 1
+  },
+  {
+    "name": "sharpdarts.poolv1.near",
+    "count": 1
+  },
+  {
+    "name": "huobipool.poolv1.near",
+    "count": 2
+  },
+  {
+    "name": "2890c948a79a3ca084142e5c19ccbce39023c111.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "686ed0d8d0a33deadcba81420364e2ee3dd7d8a0.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "af20aa7ac6505b3b9f6712c50681180f0d47156f.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "ddd1c08c2d3983d7a6ee00a528209a0a0fd15d44.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "6bc4a6970772ab993e488956f9d76dfc8d5bc564.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "6374294a269081c9db8374b276e3c0046175d64f.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "ee1f7e12c514d9d159d25cf016c8a8f926cc094d.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "astro-stakers.poolv1.near",
+    "count": 14
+  },
+  {
+    "name": "f5bc8d7c27161c33da0507e35b26b58d6bdf0592.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "8222826b44d515de23cea7fe8dfe4797d8cdb809.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "f6ec4c0f20da63ab4ad2b36120e7beedcb345514.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "42a2a118ca0f2dee7a01073cc03b724a035dbd22.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "6d0746fec69e53be0c3d7dee79b0f22a298caa63.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "9db85ebe8e3630572cd115bcc3a5824f6e999303.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "b5fb15b8a20305aab003ab701ecc2da5b6993c50.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "prot_test.flux_dev.near",
+    "count": 4
+  },
+  {
+    "name": "staked.poolv1.near",
+    "count": 3
+  },
+  {
+    "name": "zavodil.poolv1.near",
+    "count": 6
+  },
+  {
+    "name": "audit_one.poolv1.near",
+    "count": 1
+  },
+  {
+    "name": "stakesabai.poolv1.near",
+    "count": 4
+  },
+  {
+    "name": "nearscanorg.near",
+    "count": 2
+  },
+  {
+    "name": "jazza.poolv1.near",
+    "count": 1
+  },
+  {
+    "name": "itselaine.near",
+    "count": 1
+  },
+  {
+    "name": "nft2.vkkliq.near",
+    "count": 4
+  },
+  {
+    "name": "cryptium.poolv1.near",
+    "count": 3
+  },
+  {
+    "name": "undefined",
+    "count": 6
+  },
+  {
+    "name": "c95266f6dfb802cd2ce69c523e9fe7ccbcda57be.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "24a2d2b05ede7962e760e515d895cdde71ca8733.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "670d048290d03021a0bbd2b46698dbc985fc37de.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "1c0897f0f892fb21b389cb195d74768ea9817966.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "lightform-api.jiyoun.near",
+    "count": 1
+  },
+  {
+    "name": "d1.poolv1.near",
+    "count": 6
+  },
+  {
+    "name": "contract.chimoney.testnet",
+    "count": 1
+  },
+  {
+    "name": "biudrops.near",
+    "count": 1
+  },
+  {
+    "name": "0351f547483592765109361c3ed0d8ffa0dcabf8.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "d37391f3cfc04e95364c49524790f973dbc8c2e0.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "ashert.poolv1.near",
+    "count": 1
+  },
+  {
+    "name": "fresh.poolv1.near",
+    "count": 2
+  },
+  {
+    "name": "ref.near",
+    "count": 1
+  },
+  {
+    "name": "09b5dac8e5f79f0db7811c6063fc129f9d085571.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "30dd85acc038b8dbfd98c6b4612ece9fb3fe682a.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "1f2356b557ecc4cd001eaa64a1f926e18435bcbe.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "42ed47fa46a6cf8bea7401477b06527837168f2c.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "100600069ac99126ab0f3f44789f6fb08be753e4.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "oparcade-alpha.opgames.testnet",
+    "count": 1
+  },
+  {
+    "name": "ref-ui",
+    "count": 1
+  },
+  {
+    "name": "baziliknear.poolv1.near",
+    "count": 6
+  },
+  {
+    "name": "71d590285ae70a5f3208873ac7736e06e8b142b3.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "5fbb97350816d15f29ce0bdbc0f8da4cb0c59801.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "b84ce21fb9cbe6345fd51449090e248232b09f33.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "53663b7615360391376226970abe47d96bec7069.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "46c7412f6e3a809db483668e92bc65ea5b308cde.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "45cbae12de80d84ab577f3125df3e07810517e7d.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "7c8d47d460c589c2871ae3d9fc81c562407607d0.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "bbeedc1e65402c27a71349f1970eb0f282f57b0c.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "place.app.near",
+    "count": 2
+  },
+  {
+    "name": "epic.poolv1.near",
+    "count": 2
+  },
+  {
+    "name": "nc2.poolv1.near",
+    "count": 2
+  },
+  {
+    "name": "storage-bridge-validator.near",
+    "count": 1
+  },
+  {
+    "name": "nearfans.poolv1.near",
+    "count": 1
+  },
+  {
+    "name": "ad1b5199e1a6dc7e09446c6c696d47ec3135ef9f.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "e91b78064b6b1f84744716d0a53070896a204471.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "2b9195713efa9b098422043b70b63b22d916c4e4.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "7bb9924c729249c69a736b6b57a0686580dbd619.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "ogesnolimit.near",
+    "count": 1
+  },
+  {
+    "name": "fd09ec79f820142da33d9d812afcd7dddb88d315.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "75e8a6d805e7bbf66509b3e19d989a0ac3ccaa5f.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "20f23e11d64a1d3551d9746e9d69f18a0f0fdb5d.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "e3d60310fa529ea07201049acad5adb54ccd5932.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "bb22c6757722225db755cc1a64bc39de8aa41fe2.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "magic.poolv1.near",
+    "count": 1
+  },
+  {
+    "name": "manager_v1.pingbox.near",
+    "count": 1
+  },
+  {
+    "name": "dev-1631015258223-36596603302446",
+    "count": 1
+  },
+  {
+    "name": "nft.widget.near",
+    "count": 1
+  },
+  {
+    "name": "ea44778242069f1233faecab93aa83edf93ee217.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "1ef4caac8a6f7d9a5b306969199838c423a28dfa.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "897e2d25a83ffbee1097a0c323b65c81300ea9a2.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "bae318faabbf8c78934899378e82cbb6efd3165b.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "6ef4749b1c0bb142a331a3b218973cacee083e70.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "wasmgit.near",
+    "count": 1
+  },
+  {
+    "name": "48c1768c2de3f55c832846dba72128c2ae8f86eb.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "88ba58f1b9cb8fe2bb11e5e7a9d05c3c1f409fef.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "02aa3053ca829dd470075b17427159383144ff88.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "cca00cccf63e7fabd3bd7ab4ca13726729b4ec5f.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "p2p-org.poolv1.near",
+    "count": 3
+  },
+  {
+    "name": "tracker.near",
+    "count": 1
+  },
+  {
+    "name": "5d3bd33cdad10882eead7a330aadbbc581d1e369.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "c8b4658c025487d0094ab7d9c270e506c59d7221.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "5f20992303cd3c2877d436a0f1037cc1a0fb5952.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "e5d6f92a1782d5faa25b5a5723c96bb50c28d94b.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "1efe3a14a0e268d3223ed5de4093116e98dc5f8c.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "71ea554e44b99bf93a8a5814e02a8d9ff6d3f25f.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "8282ba6d75a7474f793170bf731bbf94d91b7e99.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "131718fc56cbe77b9064219af8badc04c698ca25.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "f0e66bb4f50ccd1233294bf169914dd30addfea7.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "475487afab4d26ad9e5011dd615a2a2df38c36a3.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "efaa553591d2de88502302026ba48f0a4217086f.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "a1ea7e08c78ebe16a87c12bbd130513567fd8310.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "b27cb284ed49a9628a1aee7ba2c9b52bca87c71e.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "4c77a407110918d4a707e186455d80f875a4d12a.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "dragonfly.poolv1.near",
+    "count": 1
+  },
+  {
+    "name": "stardust.poolv1.near",
+    "count": 1
+  },
+  {
+    "name": "37dbe6947eab0d0eeabadba000f14f85011bf221.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "751427ad29759b9b6360dfc84485f4df44f62a01.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "26426ac5e955edacc963912daac849dcf197565e.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "3be930466d26913d4e501645cd87104d4ff04f18.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "b445b7642f921a2082eeafde10f8247d84979e2d.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "northernlights.poolv1.near",
+    "count": 1
+  },
+  {
+    "name": "ref-playground.near",
+    "count": 1
+  },
+  {
+    "name": "d2452e3e029cd80ea52452f093acebfe8bf7467c.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "stakin.poolv1.near",
+    "count": 2
+  },
+  {
+    "name": "dialecticstake.poolv1.near",
+    "count": 1
+  },
+  {
+    "name": "9e00cef5512cb256bb3e21f3b4688cc224eb72ac.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "737535e693da51291e67facedfefa78b6c9b0f1b.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "247c229cc61cdf8ddd3655905996b13d3912623f.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "70234c33fc9588d64946e57a0b99497d231044a1.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "5a9054633a63aa9f3998ec4db695e6a03d604476.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "e7dacccbb62042c295886e210bd15d3ba08e5344.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "nft3.vkkliq.near",
+    "count": 1
+  },
+  {
+    "name": "rekt-casino.near",
+    "count": 1
+  },
+  {
+    "name": "sparkpool.poolv1.near",
+    "count": 1
+  },
+  {
+    "name": "dao.counselor.near",
+    "count": 1
+  },
+  {
+    "name": "thepassivetrust.poolv1.near",
+    "count": 1
+  },
+  {
+    "name": "f85472f50bc9d1885c3e3c23c1cba9e4cdcfdda7.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "4b9e44854e297b89e391d4faf5a4a6caefbd3dfd.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "4b30bb7c1d4f4ec27b11646620965d0fdc3f66c5.lockup.near",
+    "count": 1
+  },
+  {
+    "name": "a133de191f8561d5b5fd06fd4b4f8449dca9ce3e.lockup.near",
+    "count": 1
+  }
+]
