@@ -1,35 +1,35 @@
 [
   {
     "name": "null_address.near",
-    "count": 9357
+    "count": 9491
   },
   {
     "name": "app.nearcrowd.near",
-    "count": 7001
+    "count": 7924
   },
   {
     "name": "contract.paras.near",
-    "count": 6030
+    "count": 6156
   },
   {
     "name": "berryclub.ek.near",
-    "count": 2917
+    "count": 2981
   },
   {
     "name": "tipbot.app.near",
-    "count": 377
+    "count": 408
   },
   {
     "name": "psalomo.near",
-    "count": 50
+    "count": 52
   },
   {
     "name": "cards.berryclub.ek.near",
-    "count": 124
+    "count": 125
   },
   {
     "name": "c.nearbet.near",
-    "count": 368
+    "count": 379
   },
   {
     "name": "chorusone.poolv1.near",
@@ -37,71 +37,71 @@
   },
   {
     "name": "skyward.near",
-    "count": 26959
+    "count": 27922
   },
   {
     "name": "mintbase1.near",
-    "count": 3708
+    "count": 4149
   },
   {
     "name": "sputnik-dao.near",
-    "count": 1001
+    "count": 1046
   },
   {
     "name": "ref-farming.near",
-    "count": 4352
+    "count": 4599
   },
   {
     "name": "galaxybank.near",
-    "count": 1036
+    "count": 1064
   },
   {
     "name": "bananaswap.near",
-    "count": 94
+    "count": 95
   },
   {
     "name": "sputnikdao.near",
-    "count": 888
+    "count": 932
   },
   {
     "name": "learnclub.near",
-    "count": 7624
+    "count": 9327
   },
   {
     "name": "marketplace.paras.near",
-    "count": 6131
+    "count": 6638
   },
   {
     "name": "v2.ref-farming.near",
-    "count": 18169
+    "count": 21951
   },
   {
     "name": "mtvrs-app.near",
-    "count": 685
+    "count": 961
   },
   {
     "name": "meta-pool.near",
-    "count": 2231
+    "count": 2487
   },
   {
     "name": "pixeltoken.near",
-    "count": 3256
+    "count": 3443
   },
   {
     "name": "ref-finance.near",
-    "count": 13465
+    "count": 13739
   },
   {
     "name": "client.bridge.near",
-    "count": 131
-  },
-  {
-    "name": "pluminite.near",
     "count": 133
   },
   {
+    "name": "pluminite.near",
+    "count": 144
+  },
+  {
     "name": "avrit.near",
-    "count": 10
+    "count": 11
   },
   {
     "name": "multisender.app.near",
@@ -109,51 +109,51 @@
   },
   {
     "name": "claim-tokens.near",
-    "count": 2014
+    "count": 2037
   },
   {
     "name": "corgis3d.yifang.near",
-    "count": 63
+    "count": 66
   },
   {
     "name": "dotz.near",
-    "count": 6663
+    "count": 6871
   },
   {
     "name": "lockup.near",
-    "count": 3
+    "count": 4
   },
   {
     "name": "near-punks.near",
-    "count": 336
+    "count": 400
   },
   {
     "name": "farm.berryclub.ek.near",
-    "count": 271
+    "count": 283
   },
   {
     "name": "p1-farm.cheddar.near",
-    "count": 415
+    "count": 488
   },
   {
     "name": "lands.near",
-    "count": 127
+    "count": 143
   },
   {
     "name": "pixelparty.near",
-    "count": 302
+    "count": 317
   },
   {
     "name": "tkn.near",
-    "count": 131
+    "count": 139
   },
   {
     "name": "uhhmnft.near",
-    "count": 223
+    "count": 229
   },
   {
     "name": "unv.near",
-    "count": 81
+    "count": 96
   },
   {
     "name": "abl_pool.poolv1.near",
@@ -165,7 +165,7 @@
   },
   {
     "name": "rekt.poolv1.near",
-    "count": 3
+    "count": 4
   },
   {
     "name": "rtc.near",
@@ -173,7 +173,7 @@
   },
   {
     "name": "token.paras.near",
-    "count": 30
+    "count": 31
   },
   {
     "name": "near8888.poolv1.near",
@@ -185,11 +185,11 @@
   },
   {
     "name": "hype.tkn.near",
-    "count": 8
+    "count": 9
   },
   {
     "name": "web3bio.near",
-    "count": 13
+    "count": 15
   },
   {
     "name": "f502bd4a08fcc021a03029e304af1b029b4b2fc3.lockup.near",
@@ -249,7 +249,7 @@
   },
   {
     "name": "commonfund.near",
-    "count": 12
+    "count": 13
   },
   {
     "name": "openshards.poolv1.near",
@@ -309,15 +309,15 @@
   },
   {
     "name": "farming.ref-dev-team.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "requestnetwork.near",
-    "count": 4
+    "count": 5
   },
   {
     "name": "quizchain.near",
-    "count": 5
+    "count": 6
   },
   {
     "name": "orderly.near",
@@ -325,7 +325,7 @@
   },
   {
     "name": "crust.near",
-    "count": 9
+    "count": 11
   },
   {
     "name": "bisontrails.poolv1.near",
@@ -381,7 +381,7 @@
   },
   {
     "name": "astro-stakers.poolv1.near",
-    "count": 14
+    "count": 15
   },
   {
     "name": "f5bc8d7c27161c33da0507e35b26b58d6bdf0592.lockup.near",
@@ -609,7 +609,7 @@
   },
   {
     "name": "ogesnolimit.near",
-    "count": 1
+    "count": 2
   },
   {
     "name": "fd09ec79f820142da33d9d812afcd7dddb88d315.lockup.near",
@@ -861,7 +861,7 @@
   },
   {
     "name": "octopus-registry.near",
-    "count": 19
+    "count": 20
   },
   {
     "name": "full",
@@ -870,5 +870,13 @@
   {
     "name": "auroradao.sputnik-dao.near",
     "count": 2
+  },
+  {
+    "name": "roketodapp.near",
+    "count": 74
+  },
+  {
+    "name": "hashquark.poolv1.near",
+    "count": 1
   }
 ]
